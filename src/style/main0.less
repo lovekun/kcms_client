@@ -1,0 +1,112 @@
+.main0 {
+	&-left-sidebar {
+		z-index: 100;
+	    position: absolute;
+	    overflow: hidden;
+	    transition: width .3s;
+	    // white-space: nowrap;
+	    background: #495060;
+	    &-logo {
+	    	height: 60px;
+		    line-height: 60px;
+		    background: #495060;
+		    color: #ffffff;
+		    font-size: 20px;
+		    text-align: center;
+	    }
+	    &-menu {
+	    	height: 100vh;
+	    }
+	    &-dropmenu {
+	    	width: 60px;
+	    	background: #495060;
+	    	height: 100vh;
+	    	&-item {
+	    		display: block;
+	    		margin-top: 5px;
+	    	}
+	    }
+	}
+	&-header {
+		background: #495060;;
+	    height: 60px;
+	    width: 100%;
+	    position: absolute;
+	    top: 0;
+	    transition: padding .3s;
+	    &-collapseicon {
+	    	display: inline-block;
+	    	&-icon {
+	    		line-height: 60px;
+	    		font-size: 35px;
+	    		color: #ffffff; 
+	    		margin-left: 20px;
+	    	}
+	    }
+	    &-breadcrumb {
+	    	display: inline-block;
+	    	margin-left: 30px;
+	    	span {
+	    		color: #ffffff;
+	    	}
+	    }
+	    &-user {
+	    	float: right;
+	    	color: #fffff;
+	    	display: inline-block;
+	    	line-height: 60px;
+	    	&-menu {
+	    		background: #495060;
+	    		color: #ffffff;
+	    		margin-right: 15px;
+	    		span {
+	    			color: white;
+	    			margin-left: 5px;
+	    		}
+	    		&-item {
+	    			width: 200px;
+	    		}
+	    	}
+	    }
+	}
+	&-content {
+		position: absolute;
+	    z-index: 101;
+	    transition: left .3s;
+	    width: auto;
+	    top: 60px;
+        bottom: 0px;
+	    right: 0px;
+	    &-tagbar {
+	    	background: #F8F8F8; 
+	    	height: 40px;
+	    	line-height: 40px;
+	    	&-taglist {
+	    	display: inline-block;
+	    	margin-left: 10px;
+		    	&-item {
+		    		height: 30px;
+		    		line-height: 30px;
+		    		font-size: 13px;
+		    		background: #FFFFFF;
+
+		    	}
+		    }
+		    &-close {
+		    	float: right;
+		    	&-item {
+		    		width: 80px;
+		    		height: 30px;
+		    	}
+		    }
+	    }
+	    &-router {
+	    	background: #F8F8F8;
+            position: absolute;
+            top: 60px;
+            bottom: 0px;
+            left: 0px;
+            right: 0px;
+	    }
+	}
+}
