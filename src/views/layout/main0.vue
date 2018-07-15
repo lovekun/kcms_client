@@ -17,6 +17,7 @@
                     <MenuItem class="item" name="list">列表</MenuItem>
                     <MenuItem class="item" name="chart">图表</MenuItem>
                     <MenuItem class="item" name="dragComponent">可拖动组件</MenuItem>
+                    <MenuItem class="item" name="mytree">测试页面</MenuItem>
                 </Submenu>
                 <MenuItem name="setting">
                     <Icon type="search"></Icon>

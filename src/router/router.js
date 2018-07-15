@@ -12,7 +12,7 @@ import userCenter from '@/views/components/userCenter.vue';
 import tree from '@/views/tree/tree.vue';
 import chart from '@/views/chart/chart.vue';
 import dragComponent from '@/views/draggable/dragComponent.vue';
-
+import mytree from '@/views/tree/custom/mytree.vue'
 
 Vue.use(VueRouter);
 Vue.use(global_);
@@ -93,6 +93,11 @@ const mainRouter = {
             path: 'components/dragComponent',
             name: 'dragComponent',
             component: dragComponent
+        },
+        {
+            path: 'componenets/testPage',
+            name: 'mytree',
+            component: mytree
         },
         {
             path: 'index',
