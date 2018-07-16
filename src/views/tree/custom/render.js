@@ -12,7 +12,6 @@ export default {
         }
     },
     render: (h, ctx) => {
-        console.log(ctx.props.depth);
         return h('div', {
             style: {
                 height: '40px',
@@ -21,23 +20,47 @@ export default {
                 // 两种写法都可以 
                 // marginLeft: `${ctx.props.depth * 50}px`
                 'marginLeft': ctx.props.depth*20 + 'px'
-                //transform: `translate(${ctx.props.depth * 50}px)`,
             },
-        // },ctx.props.data);
+            on: {
+                click: () => {
+                },
+                mouseover: (e) => {
+                    var hoverObj = e.target;
+                    hoverObj.style.background = 'red';
+                },
+                mouseout: (e) => {
+                    var hoverObj = e.target;
+                    hoverObj.style.background = '';
+                }
+            }
         }, [
-            h('Button', {
+            h('Icon', {
                 props: {
-                    icon: 'arrow-right-b',
+                    type: 'chevron-right',
                 },
                 style: {
-                    width: '100px',
+                    marginLeft: '20px',
+                    display: 'inline-block',
+                    width: '40px',
                     hight: '40px'
                 }
             }),
             h('span',{
                 style: {
                 }
-            }, ctx.props.data)
+            }, ctx.props.data),
+            h('Button', {
+                props: {
+                    icon: 'ios-gear-outline'
+                },
+                style: {
+                    float: 'right' 
+                },
+                on: {
+                    click: () => {
+                    }
+                }
+            })
         ]);
     }
 }
