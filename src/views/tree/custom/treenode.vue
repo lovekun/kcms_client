@@ -45,6 +45,11 @@
             <DropdownItem name="delete">delete</DropdownItem>
             </DropdownMenu>
             </Dropdown>
+
+            <Modal v-model="modal" @on-ok="ok"
+                    @on-cancel="cancel">
+            <p>After you click ok, the dialog box will close in 2 seconds.</p>
+            </Modal>
             <!--
                 <Dropdown>
                 <Icon class="item-operation" size=24 type="ios-gear-outline" @click.stop="openOperation"></Icon>
@@ -56,7 +61,7 @@
                 </Dropdown>
             -->
         </div>
-        <treenode v-show='isfold' v-for="item in treedata.children" :treedata="item" :depth=depth+1></treenode>
+        <treenode @deleteData='deleteData' v-show='isfold' v-for="item in treedata.children" :treedata="item" :depth=depth+1></treenode>
     </div>
 </template>
 <script>
@@ -68,7 +73,8 @@ export default {
         return {
             isfold: false,
             iconType: 'chevron-right',
-            showMenu: false
+            showMenu: false,
+            modal: false
         }
     },
     props: {
@@ -94,13 +100,30 @@ export default {
             this.showMenu = !this.showMenu;
         },
         toggleOperation(name) {
-            if (name = 'add') {
-
-            } else if (name = 'edit') {
-
-            } else if (name = 'delete') {
-
+            if (name == 'add') {
+                console.log(this.treedata);
+                if(this.treedata.children) {
+                    this.treedata.children.push({'title': 'abc'});
+                } else {
+                    this.treedata.children = [];
+                    this.treedata.children.push({'title': 'test'});
+                }
+            } else if (name == 'edit') {
+                this.modal = true;
+                this.treedata.title = 'edit';
+            } else if (name == 'delete') {
+                this.$emit('deleteData', this.treedata.title);
             }
+        },
+        deleteData(delData) {
+            var vx = this;
+            this.treedata.children.forEach((item, index) => {
+                if(item.title == delData) {
+                    console.log(vx.treedata.children);
+                    vx.treedata.children.splice(index, 1);
+                }
+            })
+
         }
     },
     mounted: function() {
