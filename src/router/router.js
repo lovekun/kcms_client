@@ -77,7 +77,8 @@ const mainRouter = {
         {
             path: 'components/tree',
             name: 'tree',
-            component: tree
+            // component: tree
+            component: mytree
         },
         {
             path: 'components/list',

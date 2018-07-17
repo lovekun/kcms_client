@@ -1,80 +1,96 @@
 <style scoped>
-  .normal {
-  background-color: grey;
+.drag {
+    width: 400px;
+    height: 400px;
+    position: relative;
 }
 
-.drag {
-  background-color: green;
+.dragList {
+    border: 1px solid;
+    height: 400px;
+    width: 150px;
+    border: 2px solid #aaa;
+}
+
+.listLeft {
+    float: left;
+}
+
+.listRight {
+    float: right;
 }
 
 .dragArea {
-  min-height: 10px;
+    height: 400px;
+    width: 150px;
 }
 
+.dragItem {
+    width: 150px;
+    height: 40px;
+}
 </style>
 
 <template>
-  <div>
-    <div id="main">
-    <h1>Vue Draggable</h1>           
-    <div class="drag">
-      <div style="position: absolute;width: 50%;left: 0px;float: left;">
-        <h2>List 1 Draggable</h2>
-        <draggable v-model="list" class="dragArea" :options="{group:'people'}">
-          <div v-for="element in list">{{element.name}}</div>
-        </draggable>
-      </div>
-      <div style="position: absolute;width: 50%;right: 0px;float: right;">
-        <h2>List 2 Draggable</h2>
-        <draggable v-model="list2" class="dragArea" :options="{group:'people'}">
-          <div v-for="element in list2">{{element.name}}</div>
-        </draggable>
-      </div>
+    <div>
+        <div>
+            <h1>Vue Draggable</h1>
+            <div class="drag">
+                <div class="dragList listLeft">
+                    <draggable v-model="list" class="dragArea" :options="{group:'people'}">
+                    <div class="dragItem" v-for="element in list">{{element.name}}</div>
+                    </draggable>
+                </div>
+                <div class="dragList listRight">
+                    <draggable v-model="list2" class="dragArea" :options="{group:'people'}">
+                    <div class="dragItem" v-for="element in list2">{{element.name}}</div>
+                    </draggable>
+                </div>
+            </div>
+        </div>
     </div>
-    </div>
-  </div>
-  
+
 </template>
 
 <script>
-  import draggable from 'vuedraggable';
+import draggable from 'vuedraggable';
 
-  export default {
+export default {
     name: 'dragComponent',
     components: {
-      draggable,
+        draggable,
     },
     data() {
-      return {
-        list: [{
-          name: "John"
-        }, {
-          name: "Joao"
-        }, {
-          name: "Jean"
-        }],
-        list2: [{
-          name: "Juan"
-        }, {
-          name: "Edgard"
-        }, {
-          name: "Johnson"
-        }]
-      }
-      
+        return {
+            list: [{
+                name: "John"
+            }, {
+                name: "Joao"
+            }, {
+                name: "Jean"
+            }],
+            list2: [{
+                name: "Juan"
+            }, {
+                name: "Edgard"
+            }, {
+                name: "Johnson"
+            }]
+        }
+
     },
     methods: {
-      add: function() {
-        this.list.push({
-          name: 'Juan'
-        });
-      },
-      replace: function() {
-        this.list = [{
-          name: 'Edgard'
-        }]
-      }
+        add: function() {
+            this.list.push({
+                name: 'Juan'
+            });
+        },
+        replace: function() {
+            this.list = [{
+                name: 'Edgard'
+            }]
+        }
     }
-  }
+}
 
 </script>

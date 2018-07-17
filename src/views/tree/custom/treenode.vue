@@ -6,7 +6,8 @@
     margin-left: this.depth * 20 + 'px';
 }
 .item:hover {
-    background: yellow;
+    border:#aaa 0.5px solid;
+    // box-shadow:0 0 3px rgba(81, 81,81,0.8);
 }
 .item-icon {
     margin-left: 20px;
@@ -14,12 +15,13 @@
     height: 40px;
 }
 .item-data {
+    display: inline-block;
 }
 .item-operation {
     float: right;
-    margin-right: 5px;
-    height: 40px;
-    width: 40px;
+    margin-right: 15px;
+    height: 35px;
+    width: 35px;
     line-height: 40px;
 }
 .item-menu {
@@ -34,7 +36,7 @@
         -->
         <div class="item" @click="toggle" :style="{marginLeft: depth * 20 +  'px'}">
             <Icon class="item-icon" :type="iconType"></Icon>
-            <span class="item-data">{{treedata.title}}</span>
+            <div class="item-data">{{treedata.title}}</div>
             <Dropdown class="item-operation" transfer @on-click="toggleOperation">
             <Button type="text">
                 <Icon type="ios-gear-outline" size=24></Icon>
@@ -46,10 +48,16 @@
             </DropdownMenu>
             </Dropdown>
 
-            <Modal v-model="modal" @on-ok="ok"
-                    @on-cancel="cancel">
-            <p>After you click ok, the dialog box will close in 2 seconds.</p>
+            <Modal v-model="editModal" @on-ok="editOk"
+                   @on-cancel="editCancel">
+            <Input v-model="editVal" :placeholder="treedata.title" style="width: 300px"></Input>
             </Modal>
+
+            <Modal v-model="addModal" @on-ok="addOk"
+                   @on-cancel="addCancel">
+            <Input v-model="addVal" placeholder="add new node" style="width: 300px"></Input>
+            </Modal>
+
             <!--
                 <Dropdown>
                 <Icon class="item-operation" size=24 type="ios-gear-outline" @click.stop="openOperation"></Icon>
@@ -74,7 +82,10 @@ export default {
             isfold: false,
             iconType: 'chevron-right',
             showMenu: false,
-            modal: false
+            editModal: false,
+            addModal: false,
+            editVal: '',
+            addVal: ''
         }
     },
     props: {
@@ -101,16 +112,10 @@ export default {
         },
         toggleOperation(name) {
             if (name == 'add') {
-                console.log(this.treedata);
-                if(this.treedata.children) {
-                    this.treedata.children.push({'title': 'abc'});
-                } else {
-                    this.treedata.children = [];
-                    this.treedata.children.push({'title': 'test'});
-                }
+                this.addModal = true;
+
             } else if (name == 'edit') {
-                this.modal = true;
-                this.treedata.title = 'edit';
+                this.editModal = true;
             } else if (name == 'delete') {
                 this.$emit('deleteData', this.treedata.title);
             }
@@ -123,6 +128,23 @@ export default {
                     vx.treedata.children.splice(index, 1);
                 }
             })
+
+        },
+        editOk() {
+            this.treedata.title = this.editVal;
+        },
+        editCancel() {
+
+        },
+        addOk() {
+            if(this.treedata.children) {
+                this.treedata.children.push({'title': this.addVal});
+            } else {
+                this.treedata.children = [];
+                this.treedata.children.push({'title': this.addVal});
+            }
+        },
+        addCancel() {
 
         }
     },
