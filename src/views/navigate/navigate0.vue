@@ -8,39 +8,9 @@
             <div class="menu-logo">
                 <span>kcms</span>
             </div>
-            <Menu class="menu-uncollapsed" v-show="!isCollapsed" theme="dark" width="auto" @on-select="menuSelect">
-                <Submenu name="components">
-                <template slot="title">
-                    <Icon type="ios-analytics"></Icon>
-                    <span>组件</span>
-                </template>
-                <MenuItem class="item" name="tree">树形结构</MenuItem>
-                <MenuItem class="item" name="list">列表</MenuItem>
-                <MenuItem class="item" name="chart">图表</MenuItem>
-                <MenuItem class="item" name="dragComponent">可拖动组件</MenuItem>
-                <MenuItem class="item" name="mytree">测试页面</MenuItem>
-                </Submenu>
-                <MenuItem name="setting">
-                <Icon type="search"></Icon>
-                <span>设置</span>
-                </MenuItem>
-            </Menu>
-            <div class="menu-collapsed" v-show="isCollapsed">
-                <Dropdown class="menu-collapsed-item" transfer v-show="isCollapsed" placement="right-start" trigger="hover" @on-click="dropdownMenuSelect">
-                <Button type="text">
-                    <Icon :size="20" color="white" type="ios-analytics"></Icon>
-                </Button>
-                <DropdownMenu slot="list" style="width: 200px;">
-                <DropdownItem name='tree'>树形结构</DropdownItem>
-                <DropdownItem name='list'>列表</DropdownItem>
-                <DropdownItem name='chart'>图表</DropdownItem>
-                <DropdownItem name='dragComponent'>可拖动组件</DropdownItem>
-                </DropdownMenu>
-                </Dropdown>
-                <Button class="menu-collapsed-item" type="text" @click="settingBtnClick">
-                    <Icon :size="25" color="white" type="gear-a"></Icon>
-                </Button>
-            </div>
+            <collapse-menu class="menu-uncollapsed" v-show="!isCollapsed"  @menuSelect="menuSelect"></collapse-menu>
+
+            <dropdown-menu class="menu-collapsed" v-show="isCollapsed" @dropdownMenuSelect="dropdownMenuSelect" @settingBtnClick="settingBtnClick"></dropdown-menu>
         </div>
         <div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">
             <div class="top-collapse-toggle">
@@ -68,8 +38,14 @@
     </div>
 </template>
 <script>
+import collapseMenu from '@/views/menu/collapseMenu.vue';
+import dropdownMenu from '@/views/menu/dropdownMenu.vue';
 export default {
     name: 'navigate0',
+    components: {
+        collapseMenu,
+        dropdownMenu
+    },
     props: {
         /*
         isCollapsed: {
@@ -91,17 +67,6 @@ export default {
     methods: {
         collapseMenu() {
             this.isCollapsed = !this.isCollapsed;
-            // this.$emit('toggleMenu');
-        },
-        dropdownMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
         },
         menuSelect(name) {
             if(this.$store.state.tagList.indexOf(name) === -1) {

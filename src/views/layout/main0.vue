@@ -20,13 +20,9 @@
     </div>
 </template>
 <script>
-import leftMenu0 from '@/views/menu/leftMenu0.vue';
-import topMenu0 from '@/views/menu/topMenu0.vue';
 import navigate0 from '@/views/navigate/navigate0.vue'
 export default {
     components: {
-        leftMenu0,
-        topMenu0,
         navigate0
     },
     data () {
