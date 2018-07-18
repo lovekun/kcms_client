@@ -42,27 +42,30 @@
                 </Button>
             </div>
         </div>
-            <div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">
-                <div class="top-collapse-toggle">
-                    <Icon class="top-collapse-toggle-icon" type="navicon-round" :style="{transform: 'rotate(' + (isCollapsed ? '0' : '90') + 'deg'}" @click="collapseMenu"></Icon>
-                </div>
-                <Breadcrumb class="top-breadcrumb">
-                <BreadcrumbItem v-for="item in currentPath" :to="toPath"><span>{{item.title}}</span></BreadcrumbItem>
-                </Breadcrumb>
-                <div class="top-user">
-                    <Dropdown class="top-user-menu" transfer placement="bottom-start" trigger="hover" @on-click="dropdownMenuSelect">
-                    <Button type="text">
-                        <Icon :size="20" color="white" type="android-person"></Icon>
-                        <span>admin</span>
-                    </Button>
-                    <DropdownMenu class="top-user-menu-item" slot="list">
-                    <DropdownItem name="userCenter">个人中心</DropdownItem>
-                    <DropdownItem name="logout">退出</DropdownItem>
-                    </DropdownMenu>
-                    </Dropdown>
-                </div>
+        <div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">
+            <div class="top-collapse-toggle">
+                <Icon class="top-collapse-toggle-icon" type="navicon-round" :style="{transform: 'rotate(' + (isCollapsed ? '0' : '90') + 'deg'}" @click="collapseMenu"></Icon>
+            </div>
+            <Breadcrumb class="top-breadcrumb">
+            <BreadcrumbItem v-for="item in currentPath" :to="toPath"><span>{{item.title}}</span></BreadcrumbItem>
+            </Breadcrumb>
+            <div class="top-user">
+                <Dropdown class="top-user-menu" transfer placement="bottom-start" trigger="hover" @on-click="dropdownMenuSelect">
+                <Button type="text">
+                    <Icon :size="20" color="white" type="android-person"></Icon>
+                    <span>admin</span>
+                </Button>
+                <DropdownMenu class="top-user-menu-item" slot="list">
+                <DropdownItem name="userCenter">个人中心</DropdownItem>
+                <DropdownItem name="logout">退出</DropdownItem>
+                </DropdownMenu>
+                </Dropdown>
             </div>
         </div>
+        <div class="content" :style="{left: isCollapsed?'60px':'200px'}">
+            <slot></slot>
+        </div>
+    </div>
 </template>
 <script>
 export default {
@@ -72,7 +75,7 @@ export default {
         isCollapsed: {
             type: Boolean
         }
-        */
+         */
     },
     data() {
         return {
