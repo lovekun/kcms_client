@@ -1,6 +1,6 @@
 <style lang="less">
     // css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
-    @import '~@/style/login.less';
+    @import "~@/views/login.less";
 </style>
 
 <template>
