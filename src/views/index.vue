@@ -1,9 +1,8 @@
-<style scoped>
-
-
+<style scoped lang="less">
+@import "./index.less";
 </style>
 <template>
-    <div style="position: absolute;top: 10px;bottom: 10px;left: 10px;right: 10px;">
+    <div>
         <Row>
             <Col span="8">
                 <Card :bordered="false">

@@ -1,23 +1,21 @@
 <style scoped lang="less">
-@import "~@/style/main0.less";
+@import "~@/views/layout/main0.less";
 </style>
 <template>
-    <div class="main0">
-        <navigate0 style="height: 100%">
-        <div class="main0-content-tagbar">
-            <div class="main0-content-tagbar-taglist">
-                <Tag class="main0-content-tagbar-taglist-item" @click.native="tagClick(item)" v-for="item in tagList" :closable="item === 'index' ? false : true" @on-close="handleClose(item)">{{ item }}</Tag>
-            </div>
-            <div class="main0-content-tagbar-close" style="float: right;">
-                <Button class="main0-content-tagbar-close-item" type="error" @click="closeOthers">关闭其他</Button>
-                <Button class="main0-content-tagbar-close-item" type="error" @click="closeAll">关闭所有</Button>
-            </div>
+    <navigate0 class="main0">
+    <div class="main0-tagbar">
+        <div class="main0-tagbar-taglist">
+            <Tag class="main0-tagbar-taglist-item" @click.native="tagClick(item)" v-for="item in tagList" :closable="item === 'index' ? false : true" @on-close="handleClose(item)">{{ item }}</Tag>
         </div>
-        <div class="main0-content-router" >
-            <router-view></router-view>
+        <div class="main0-tagbar-close" style="float: right;">
+            <Button class="main0-content-tagbar-close-item" type="error" @click="closeOthers">关闭其他</Button>
+            <Button class="main0-content-tagbar-close-item" type="error" @click="closeAll">关闭所有</Button>
         </div>
-        </navigate0>
     </div>
+    <div class="main0-router" >
+        <router-view></router-view>
+    </div>
+    </navigate0>
 </template>
 <script>
 import navigate0 from '@/views/navigate/navigate0.vue'
