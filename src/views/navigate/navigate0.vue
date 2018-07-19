@@ -1,5 +1,5 @@
 <style scoped lang="less">
-@import "~@/style/navigate0.less";
+@import "~@/views/navigate/navigate0.less";
 </style>
 
 <template>
@@ -23,7 +23,7 @@
             </div>
         </div>
         <!-- 页面主体内容 -->
-        <div class="content" :style="{left: isCollapsed?'60px':'200px'}">
+        <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}">
             <slot></slot>
         </div>
     </div>
