@@ -1,5 +1,5 @@
 <template>
-    <div style="width: 300px;">
+    <div>
         <treenode :treedata="treeData" :depth=0></treenode>
     </div>
 </template>

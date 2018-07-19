@@ -1,15 +1,7 @@
 <style scoped>
 .tree {
-    position: absolute;
-    left: 10px;
-    top: 10px;
-    bottom: 10px;
-    background: #B0F566;
+    
 }
-/*.tree-body {*/
-/* overflow-y: scroll;
-overflow-x: hidden;*/
-/*}*/
 </style>
 <template>
     <div class="tree">
@@ -18,6 +10,7 @@ overflow-x: hidden;*/
 </template>
 <script>
 export default {
+    name: 'tree1',
     data () {
         return {
             data5: [
@@ -28,8 +21,7 @@ export default {
                         return h('span', {
                             style: {
                                 display: 'inline-block',
-                                width: '100%',
-                                background: '#F8F8F8'
+                                width: '100%'
                             }
                         }, [
                             h('span', [

@@ -31,9 +31,6 @@
 </style>
 <template>
     <div>
-        <!--
-            <render class="test" :data="treedata.title" :depth=depth @click='toggle'></render>
-        -->
         <div class="item" @click="toggle" :style="{marginLeft: depth * 20 +  'px'}">
             <Icon class="item-icon" :type="iconType"></Icon>
             <div class="item-data">{{treedata.title}}</div>
@@ -57,17 +54,6 @@
                    @on-cancel="addCancel">
             <Input v-model="addVal" placeholder="add new node" style="width: 300px"></Input>
             </Modal>
-
-            <!--
-                <Dropdown>
-                <Icon class="item-operation" size=24 type="ios-gear-outline" @click.stop="openOperation"></Icon>
-                <DropdownMenu transfer placement="bottom" style="display:inline-block">
-                <DropdownItem>add</DropdownItem>
-                <DropdownItem>edit</DropdownItem>
-                <DropdownItem>delete</DropdownItem>
-                </DropdownMenu>
-                </Dropdown>
-            -->
         </div>
         <treenode @deleteData='deleteData' v-show='isfold' v-for="item in treedata.children" :treedata="item" :depth=depth+1></treenode>
     </div>

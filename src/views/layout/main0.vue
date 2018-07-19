@@ -2,7 +2,7 @@
 @import "~@/style/main0.less";
 </style>
 <template>
-    <div class="main0" style="height: 100%;">
+    <div class="main0">
         <navigate0 style="height: 100%">
         <div class="main0-content-tagbar">
             <div class="main0-content-tagbar-taglist">
@@ -13,7 +13,7 @@
                 <Button class="main0-content-tagbar-close-item" type="error" @click="closeAll">关闭所有</Button>
             </div>
         </div>
-        <div class="main0-content-router">
+        <div class="main0-content-router" >
             <router-view></router-view>
         </div>
         </navigate0>
@@ -34,21 +34,9 @@ export default {
     computed: {
         tagList() {
             return this.$store.state.tagList;
-        },
-        currentPath() {
-            return this.$store.state.currentPath;
         }
     },
     methods: {
-        collapseMenu: function() {
-            this.isCollapsed = !this.isCollapsed;
-        },
-        menuSelect(name) {
-            if(this.$store.state.tagList.indexOf(name) === -1) {
-                this.$store.commit('updateTagList', name);
-            }
-            this.$router.push({name: name});
-        },
         handleClose(name) {
             this.$store.commit('removeTagList', name);
             this.$router.push({name: this.$store.state.tagList[this.$store.state.tagList.length - 1]});
@@ -67,23 +55,6 @@ export default {
             this.$router.push({
                 name: 'index'
             });
-        },
-        dropdownMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
-
-        },
-        settingBtnClick() {
-            if(this.$store.state.tagList.indexOf('setting') === -1) {
-                this.$store.commit('updateTagList', 'setting');
-            }
-            this.$router.push({name: 'setting'});
         }
     },
     mounted: function () {

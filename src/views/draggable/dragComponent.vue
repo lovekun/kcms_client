@@ -1,53 +1,31 @@
 <style scoped>
-.drag {
-    width: 400px;
-    height: 400px;
-    position: relative;
-}
 
-.dragList {
-    border: 1px solid;
-    height: 400px;
-    width: 150px;
-    border: 2px solid #aaa;
-}
-
-.listLeft {
-    float: left;
-}
-
-.listRight {
-    float: right;
-}
-
-.dragArea {
-    height: 400px;
-    width: 150px;
-}
-
-.dragItem {
-    width: 150px;
-    height: 40px;
-}
 </style>
 
 <template>
-    <div>
-        <div>
-            <h1>Vue Draggable</h1>
-            <div class="drag">
-                <div class="dragList listLeft">
-                    <draggable v-model="list" class="dragArea" :options="{group:'people'}">
-                    <div class="dragItem" v-for="element in list">{{element.name}}</div>
+    <div style="height: 100%">
+        <h1>Vue Draggable</h1>
+        <Row :gutter="32" style="height: 100%">
+            <Col span="12" style="height: 100%">
+                <div style="height: 100%">
+                    <Card style="height: 100%">
+                    <draggable v-model="list" class="dragArea" :options="{group:'people'}" style="height: 100%">
+                            <div class="dragItem" v-for="element in list" style="height: 40px;line-height: 40px;">{{element.name}}</div>
                     </draggable>
+                </Card>
                 </div>
-                <div class="dragList listRight">
-                    <draggable v-model="list2" class="dragArea" :options="{group:'people'}">
-                    <div class="dragItem" v-for="element in list2">{{element.name}}</div>
+            </Col>
+            <Col span="12" style="height: 100%">
+                <div style="height: 100%">
+                    <Card style="height: 100%">
+                    <draggable v-model="list2" class="dragArea" :options="{group:'people'}" style="height: 100%">
+                    <div class="dragItem" v-for="element in list2" style="height: 40px;line-height: 40px;">{{element.name}}</div>
                     </draggable>
+                </Card>
                 </div>
-            </div>
-        </div>
+            </Col>
+        </Row>
+        
     </div>
 
 </template>

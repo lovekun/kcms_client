@@ -6,7 +6,7 @@
     
 </template>
 <script>
-	import tree from '../tree/tree.vue';
+	import tree from '@/views/tree/tree1.vue';
 	export default {
 		name: 'infos',
 		components: {
