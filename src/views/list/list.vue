@@ -5,17 +5,17 @@
     <div class="list">
         <Form class="list-form" ref="formInline" :model="formInline" :rules="ruleInline" inline>
             <FormItem prop="user">
-            <Input type="text" v-model="formInline.name" placeholder="name">
-            <Icon type="ios-person-outline" slot="prepend"></Icon>
-            </Input>
-            </FormItem>
-            <Button @click="handleSelectAll(true)">Set all selected</Button>
-            <Button @click="handleSelectAll(false)">Cancel all selected</Button>
-            <FormItem style="float: right;">
-            <Button type="primary" @click="handleSubmit('formInline')">Search</Button>
+                <Input type="text" v-model="formInline.name" placeholder="name">
+                    <Icon type="ios-person-outline" slot="prepend"></Icon>
+                </Input>
+                </FormItem>
+                    <Button @click="handleSelectAll(true)">Set all selected</Button>
+                    <Button @click="handleSelectAll(false)">Cancel all selected</Button>
+                <FormItem style="float: right;">
+                <Button type="primary" @click="handleSubmit('formInline')">Search</Button>
             </FormItem>
         </Form>
-        <Table class="list-table" border ref="selection" :columns="columns" :data="data"></Table>
+        <Table height=400 style="width: 100%" class="list-table" ref="selection" :columns="columns" :data="data"></Table>
         <Page class="list-page" :total="100" show-elevator></Page>
     </div>
 </template>

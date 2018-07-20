@@ -14,6 +14,7 @@ import chart from '@/views/chart/chart.vue';
 import dragComponent from '@/views/draggable/dragComponent.vue';
 import tree0 from '@/views/tree/custom/tree0.vue';
 import treeShow from '@/views/showPage/treeShow.vue';
+import card from '@/views/card/card.vue';
 
 Vue.use(VueRouter);
 Vue.use(global_);
@@ -98,7 +99,7 @@ const mainRouter = {
         {
             path: 'componenets/testPage',
             name: 'mytree',
-            component: tree0
+            component: card
         },
         {
             path: 'index',

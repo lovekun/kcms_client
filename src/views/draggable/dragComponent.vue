@@ -1,33 +1,25 @@
 <style scoped>
 
 </style>
-
 <template>
-    <div style="height: 100%">
-        <h1>Vue Draggable</h1>
-        <Row :gutter="32" style="height: 100%">
-            <Col span="12" style="height: 100%">
-                <div style="height: 100%">
-                    <Card style="height: 100%">
-                    <draggable v-model="list" class="dragArea" :options="{group:'people'}" style="height: 100%">
-                            <div class="dragItem" v-for="element in list" style="height: 40px;line-height: 40px;">{{element.name}}</div>
-                    </draggable>
-                </Card>
-                </div>
-            </Col>
-            <Col span="12" style="height: 100%">
-                <div style="height: 100%">
-                    <Card style="height: 100%">
-                    <draggable v-model="list2" class="dragArea" :options="{group:'people'}" style="height: 100%">
-                    <div class="dragItem" v-for="element in list2" style="height: 40px;line-height: 40px;">{{element.name}}</div>
-                    </draggable>
-                </Card>
-                </div>
-            </Col>
+    <div style="height: 100%;padding: 10px;">
+        <Row :gutter="32">
+        <Col span="12">
+        <Card style="height: 500px;">
+            <draggable v-model="list" class="dragArea" :options="{group:'people'}" style="height: 500px;">
+            <div class="dragItem" v-for="element in list" style="height: 40px;line-height: 40px;">{{element.name}}</div>
+            </draggable>
+            </Card>
+        </Col>
+        <Col span="12">
+        <Card style="height: 500px;">
+            <draggable v-model="list2" class="dragArea" :options="{group:'people'}" style="height: 500px">
+            <div class="dragItem" v-for="element in list2" style="height: 40px;line-height: 40px;">{{element.name}}</div>
+            </draggable>
+            </Card>
+        </Col>
         </Row>
-        
     </div>
-
 </template>
 
 <script>

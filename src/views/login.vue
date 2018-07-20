@@ -4,6 +4,7 @@
 </style>
 
 <template>
+    <!--
     <div id="login">
         <Card class="card">
             <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
@@ -22,8 +23,22 @@
             </FormItem>
             </Form>
         </Card>
+        </div>
+    -->
+    <div style="width: 100%; height: 100%; padding: 30px">
+    <Row :gutter="16">
+        <Col span="8">
+            <div>test</div>
+        </Col>
+        <Col span="8">
+            <div>test</div>
+        </Col>
+<Col span="8">
+            <div>test</div>
+        </Col>
+        </Row>
     </div>
-</template>
+    </template>
 <script>
     export default {
         data () {
