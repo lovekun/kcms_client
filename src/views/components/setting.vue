@@ -20,7 +20,7 @@
     
 </template>
 <script>
-    import global_ from '../../util/global.vue';
+    import global_ from '@/util/global.vue';
 	export default {
 		data () {
             return {

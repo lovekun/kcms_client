@@ -9,14 +9,16 @@ import infos from '@/views/components/infos.vue';
 import list from '@/views/list/list.vue';
 import global_ from '@/util/global.vue';
 import userCenter from '@/views/components/userCenter.vue';
-import tree from '@/views/tree/tree.vue';
+import tree1 from '@/views/tree/tree1.vue';
 import chart from '@/views/chart/chart.vue';
 import dragComponent from '@/views/draggable/dragComponent.vue';
-
+import tree0 from '@/views/tree/custom/tree0.vue';
+import treeShow from '@/views/showPage/treeShow.vue';
+import card from '@/views/card/card.vue';
+import markdown from "@/views/editor/markdown.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
-
 
 const indexRouter = {
     path: '/',
@@ -77,7 +79,8 @@ const mainRouter = {
         {
             path: 'components/tree',
             name: 'tree',
-            component: tree
+            // component: tree
+            component: treeShow
         },
         {
             path: 'components/list',
@@ -93,6 +96,16 @@ const mainRouter = {
             path: 'components/dragComponent',
             name: 'dragComponent',
             component: dragComponent
+        },
+        {
+            path: 'components/markdown',
+            name: 'markdown',
+            component: markdown
+        },
+        {
+            path: 'components/testPage',
+            name: 'mytree',
+            component: markdown
         },
         {
             path: 'index',

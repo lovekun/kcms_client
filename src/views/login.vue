@@ -1,9 +1,10 @@
 <style lang="less">
     // css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
-    @import '~@/style/login.less';
+    @import "~@/views/login.less";
 </style>
 
 <template>
+    <!--
     <div id="login">
         <Card class="card">
             <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
@@ -22,8 +23,22 @@
             </FormItem>
             </Form>
         </Card>
+        </div>
+    -->
+    <div style="width: 100%; height: 100%; padding: 30px">
+    <Row :gutter="16">
+        <Col span="8">
+            <div>test</div>
+        </Col>
+        <Col span="8">
+            <div>test</div>
+        </Col>
+<Col span="8">
+            <div>test</div>
+        </Col>
+        </Row>
     </div>
-</template>
+    </template>
 <script>
     export default {
         data () {

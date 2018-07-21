@@ -31,7 +31,7 @@
     </Layout>
 </template>
 <script>
-	import tree from '@/views/tree/tree.vue';
+	import tree from '@/views/tree/tree1.vue';
     import scroll from '@/views/list/scroll.vue';
     import baseComponents from '@/views/components/baseComponents.vue';
     export default {
