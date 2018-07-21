@@ -15,6 +15,7 @@ import dragComponent from '@/views/draggable/dragComponent.vue';
 import tree0 from '@/views/tree/custom/tree0.vue';
 import treeShow from '@/views/showPage/treeShow.vue';
 import card from '@/views/card/card.vue';
+import markdown from "@/views/editor/markdown.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
@@ -97,9 +98,14 @@ const mainRouter = {
             component: dragComponent
         },
         {
-            path: 'componenets/testPage',
+            path: 'components/markdown',
+            name: 'markdown',
+            component: markdown
+        },
+        {
+            path: 'components/testPage',
             name: 'mytree',
-            component: card
+            component: markdown
         },
         {
             path: 'index',

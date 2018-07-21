@@ -9,6 +9,7 @@
         <DropdownItem name='list'>列表</DropdownItem>
         <DropdownItem name='chart'>图表</DropdownItem>
         <DropdownItem name='dragComponent'>可拖动组件</DropdownItem>
+        <DropdownItem name='markdown'>markdown编辑器</DropdownItem>
         </DropdownMenu>
         </Dropdown>
         <Button class="menu-collapsed-item" type="text" @click="settingBtnClick">
