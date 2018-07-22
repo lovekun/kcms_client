@@ -16,6 +16,11 @@ import tree0 from '@/views/tree/custom/tree0.vue';
 import treeShow from '@/views/showPage/treeShow.vue';
 import card from '@/views/card/card.vue';
 import markdown from "@/views/editor/markdown.vue";
+import pageList from "@/views/list/pageList.vue";
+import horizontalScrollList from "@/views/list/horizontalScrollList.vue"
+import editableList from "@/views/list/editableList.vue"
+import exportableList from "@/views/list/exportableList.vue"
+import multiShowList from "@/views/list/multiShowList.vue"
 
 Vue.use(VueRouter);
 Vue.use(global_);
@@ -105,7 +110,7 @@ const mainRouter = {
         {
             path: 'components/testPage',
             name: 'mytree',
-            component: markdown
+            component: multiShowList
         },
         {
             path: 'index',

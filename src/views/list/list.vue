@@ -4,15 +4,25 @@
 <template>
     <div class="list">
         <Form class="list-form" ref="formInline" :model="formInline" :rules="ruleInline" inline>
+            <FormItem>
+            <Select style="width:100px">
+                <Option v-for="item in checkableList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+            </FormItem>
+            <FormItem>
+            <Select style="width:100px">
+                <Option v-for="item in stripeableList" :value="item.value" :key="item.value">{{ item.label }}</Option>
+            </Select>
+            </FormItem>
             <FormItem prop="user">
-                <Input type="text" v-model="formInline.name" placeholder="name">
-                    <Icon type="ios-person-outline" slot="prepend"></Icon>
-                </Input>
-                </FormItem>
-                    <Button @click="handleSelectAll(true)">Set all selected</Button>
-                    <Button @click="handleSelectAll(false)">Cancel all selected</Button>
-                <FormItem style="float: right;">
-                <Button type="primary" @click="handleSubmit('formInline')">Search</Button>
+            <Input type="text" v-model="formInline.name" placeholder="name">
+            <Icon type="ios-person-outline" slot="prepend"></Icon>
+            </Input>
+            </FormItem>
+            <Button @click="handleSelectAll(true)">Set all selected</Button>
+            <Button @click="handleSelectAll(false)">Cancel all selected</Button>
+            <FormItem style="float: right;">
+            <Button type="primary" @click="handleSubmit('formInline')">Search</Button>
             </FormItem>
         </Form>
         <Table height=400 style="width: 100%" class="list-table" ref="selection" :columns="columns" :data="data"></Table>
@@ -23,6 +33,26 @@
 export default {
     data () {
         return {
+            checkableList: [
+            {
+                value: '1',
+                label: '可勾选'
+            },
+            {
+                value: '0',
+                label: '不可勾选'
+            }
+            ],
+            stripeableList: [
+            {
+                value: '1',
+                label: '显示斑马纹'
+            },
+            {
+                value: '0',
+                label: '不显示斑马纹'
+            }
+            ],
             columns: [],
             data: [],
             formInline: {
