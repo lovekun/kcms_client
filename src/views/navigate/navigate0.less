@@ -14,6 +14,11 @@
     }
     &-uncollapsed {
         height: calc(100% - 60px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {      // 隐藏滚动条，好像不兼容IE
+            display: none;
+        }
     }
     &-collapsed {
         height: calc(100% - 60px);
@@ -30,7 +35,7 @@
     &-collapse-toggle {
         display: inline-block;
         &-icon {
-            line-height: 60px;
+            line-height: 50px;
             font-size: 35px;
             color: #ffffff;
             margin-left: 20px;
@@ -39,15 +44,13 @@
     &-breadcrumb {
         display: inline-block;
         margin-left: 30px;
-        span {
-            color: #ffffff;
-        }
+        line-height: 50px;
     }
     &-user {
         display: inline-block;
         float: right;
         color: #ffffff;
-        line-height: @collapsedWidth;
+        line-height: 50px;
         &-menu {
             background: @navigateBackgroundColor;
             color: #ffffff;

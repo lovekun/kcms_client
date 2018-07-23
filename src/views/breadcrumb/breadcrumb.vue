@@ -1,6 +1,6 @@
 <template>
-    <Breadcrumb class="top-breadcrumb">
-    <BreadcrumbItem v-for="item in currentPath" :to="toPath"><span style="color: #ffffff">{{item.title}}</span></BreadcrumbItem>
+    <Breadcrumb>
+    <BreadcrumbItem v-for="item in currentPath" :to="toPath"><span style="color: #ffffff;font-size: 16px;">{{item.title}}</span></BreadcrumbItem>
     </Breadcrumb>
 </template>
 <script>

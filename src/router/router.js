@@ -109,7 +109,27 @@ const mainRouter = {
         },
         {
             path: 'components/testPage',
-            name: 'mytree',
+            name: 'test',
+            component: multiShowList
+        },
+        {
+            path: 'table/horizontalScrollList',
+            name: 'horizontalScrollList',
+            component: horizontalScrollList
+        },
+        {
+            path: 'table/editableList',
+            name: 'editableList',
+            component: editableList
+        },
+        {
+            path: 'table/exportableList',
+            name: 'exportableList',
+            component: exportableList
+        },
+        {
+            path: 'table/multiShowList',
+            name: 'multiShowList',
             component: multiShowList
         },
         {

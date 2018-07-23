@@ -1,7 +1,6 @@
 <style scoped lang="less">
 @import "~@/views/navigate/navigate0.less";
 </style>
-
 <template>
     <div>
         <!-- 左侧菜单栏 -->
@@ -21,6 +20,9 @@
             <div class="top-user">
                 <user-center @userMenuSelect="userMenuSelect" class="top-user-menu"></user-center>
             </div>
+            <div class="top-user">
+                <tool-menu @userMenuSelect="userMenuSelect" class="top-user-menu"></tool-menu>
+            </div>
         </div>
         <!-- 页面主体内容 -->
         <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}">
@@ -33,13 +35,15 @@ import collapseMenu from '@/views/menu/collapseMenu.vue';
 import dropdownMenu from '@/views/menu/dropdownMenu.vue';
 import userCenter from '@/views/menu/userCenter';
 import breadcrumb from '@/views/breadcrumb/breadcrumb.vue';
+import toolMenu from '@/views/menu/toolMenu.vue';
 export default {
     name: 'navigate0',
     components: {
         collapseMenu,
         dropdownMenu,
         userCenter,
-        breadcrumb
+        breadcrumb,
+        toolMenu
     },
     props: {
     },

@@ -3,15 +3,7 @@
 </style>
 <template>
     <navigate0 class="main0">
-    <div class="main0-tagbar">
-        <div class="main0-tagbar-taglist">
-            <Tag class="main0-tagbar-taglist-item" @click.native="tagClick(item)" v-for="item in tagList" :closable="item === 'index' ? false : true" @on-close="handleClose(item)">{{ item }}</Tag>
-        </div>
-        <div class="main0-tagbar-close" style="float: right;">
-            <Button class="main0-content-tagbar-close-item" type="error" @click="closeOthers">关闭其他</Button>
-            <Button class="main0-content-tagbar-close-item" type="error" @click="closeAll">关闭所有</Button>
-        </div>
-    </div>
+    <tag></tag>
     <div class="main0-router" >
         <router-view></router-view>
     </div>
@@ -19,9 +11,11 @@
 </template>
 <script>
 import navigate0 from '@/views/navigate/navigate0.vue'
+import tag from '@/views/tag/tag.vue'
 export default {
     components: {
-        navigate0
+        navigate0,
+        tag
     },
     data () {
         return {
@@ -46,7 +40,6 @@ export default {
         },
         closeOthers() {
             this.$store.commit('removeOtherTagList', this.$router.currentRoute.name);
-
         },
         closeAll() {
             this.$store.commit('removeAllTagList');
