@@ -3,33 +3,37 @@ import user from '@/data/user.js';
 
 export default {
     login(context, payload) {
-        if(HAS_SERVER) {
-            axios.post('/login', {username: payload.username, password: payload.password})
+        if (HAS_SERVER) {
+            axios.post('/login', {
+                    username: payload.username,
+                    password: payload.password
+                })
                 .then(function(response) {
-                    if(response.data == 'success') {
-                        console.log("response:----" + response);
+                    if (response.data == 'success') {
+                        return new Promise((resolve, reject) => {
+                            setTimeout(() => {
+                                resolve()
+                            }, 1000)
+                        });
                     } else {
-                        console.log(response);
-                        console.log('login fail' + response);
+                        return new Promise((resolve, reject) => {
+                            reject();
+                        });
                     }
                 })
-                .catch(function(error){
-                    console.log(error);
+                .catch(function(error) {
+                    console.log(error + "=======");
                 })
         } else {
             console.log(user.username + "====" + user.password);
-            if(payload.username == 'admin' && payload.password == "admin123") {
+            if (payload.username == 'admin' && payload.password == "admin123") {
                 console.log('dev server: login success');
                 this.state.user.loginTime = new Date().Format("yyyy-MM-dd");
             } else {
                 console.log('dev server: login failed');
             }
         }
-        return new Promise((resolve, reject ) => {
-            setTimeout( () => {
-                resolve()
-            },1000)
-        });
+
     },
     getList(context, payload) {
         var vx = this;
