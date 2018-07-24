@@ -11,7 +11,7 @@
     </Col>
     <Col span="8">
     <Card :bordered="false">
-    <p slot="title">No border title</p>
+    <p slot="title">Test7 Test</p>
     <p>Content of no border type. Content of no border type. Content of no border type. Content of no border type. </p>
     </Card>
     </Col>
