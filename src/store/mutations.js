@@ -1,31 +1,11 @@
 import axios from 'axios';
 import user from '@/data/user.js';
+import '@/util/date.js';
 
 export default {
-    login(context, payload) {
-        console.log('==================');
-        if(HAS_SERVER) {
-            axios.post('/login', {username: payload.username, password: payload.password})
-                .then(function(response) {
-                    if(response.data == 'success') {
-                        console.log("response:----" + response);
-                    } else {
-                        console.log(response);
-                        console.log('login fail' + response);
-                    }
-                })
-                .catch(function(error){
-                    console.log(error);
-                })
-        } else {
-            console.log(user.username + "====" + user.password);
-            if(payload.username == 'admin' && payload.password == "admin123") {
-                console.log('dev server: login success');
-                this.state.user.loginTime = new Date().Format("yyyy-MM-dd");
-            } else {
-                console.log('dev server: login failed');
-            }
-        }
+    updateUserInfo(state, payload) {
+        this.state.user = payload;
+        this.state.user.lastLoginTime = new Date().Format("yyyy-MM-dd")
     },
     increment (state) {
         state.count++

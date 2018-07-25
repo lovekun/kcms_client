@@ -20,9 +20,10 @@ app.post('/login', function(req, res){
     let username = req.body.username;
     let password = req.body.password;
     User.findOne({'username': username}, function(error, adventure) {
-        if(adventure.password == password) {
+        if(adventure != null && adventure.password == password) {
             res.send("success");
         } else {
+            console.log('fail')
             res.send("fail");
         }
     })
@@ -37,7 +38,7 @@ var server = app.listen(3000, function () {
 
 
 function initServer() {
-    mongoose.connect('mongodb://localhost:27017/user', { useNewUrlParser: true });
+    var db = mongoose.connect('mongodb://localhost:27017/user', { useNewUrlParser: true });
     User.countDocuments({}, function(error, count) {
         if(count == 0) {
             let admin = new User({"username": "admin", "password": "admin123"});
@@ -45,5 +46,4 @@ function initServer() {
             admin.save();
         }
     });
-
 }

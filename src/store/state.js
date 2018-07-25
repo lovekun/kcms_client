@@ -2,7 +2,7 @@ export default {
     user: {
         username: '',
         password: '',
-        loginTime: '',
+        lastLoginTime: '',
         loginPosition: ''
     },
     count: 0,

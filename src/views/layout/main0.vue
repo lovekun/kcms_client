@@ -49,7 +49,6 @@ export default {
         }
     },
     mounted: function () {
-        console.log(this.$store.state.tagList);
         if(this.$store.state.tagList.indexOf('index') === -1) {
             this.$store.commit('updateTagList', 'index');
         }

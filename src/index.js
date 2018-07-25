@@ -6,10 +6,11 @@ import '../node_modules/iview/dist/styles/iview.css';
 import Vuex from 'vuex';
 import '@/util/date.js';
 import {store} from '@/store/store.js';
+import * as Cookies from "js-cookie";
+
 
 Vue.use(iView);
-
-
+Vue.prototype.$cookie = Cookies
 new Vue({
     router: router,
     store: store,
