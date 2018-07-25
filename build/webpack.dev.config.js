@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 var HtmlwebpackPlugin = require('html-webpack-plugin');
 
-function resolve (dir) {
+function resolve(dir) {
     return path.join(__dirname, dir);
 }
 
@@ -25,8 +25,7 @@ module.exports = {
         path: path.resolve(__dirname, '../dist')
     },
     module: {
-        rules: [
-            {
+        rules: [{
                 test: /\.vue$/,
                 loader: 'vue-loader',
             },
@@ -67,14 +66,17 @@ module.exports = {
             name: true
         }
     },
-    plugins:[
+    plugins: [
         new webpack.HotModuleReplacementPlugin(),
         new webpack.ProvidePlugin({
             jQuery: "jquery",
             $: "jquery"
         }),
         new HtmlwebpackPlugin({
-            template: './index.html'    // 该路径是根据启动node服务的路径,我理解为启动项目的根路径
+            template: './index.html' // 该路径是根据启动node服务的路径,我理解为启动项目的根路径
+        }),
+        new webpack.DefinePlugin({
+            HAS_SERVER: false
         })
     ],
     resolve: {

@@ -10,9 +10,9 @@
     </card>
     </Col>
     <Col span="8" style="height: 100%;">
-    <card style="height: 100%;">
+    <Card :bordered="false" style="height: 100%;">
     <tree0></tree0>
-    </card>
+    </Card>
     </Col>
     <Col span="8" style="height: 100%;">
     <card style="height: 100%;">

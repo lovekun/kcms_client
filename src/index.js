@@ -8,7 +8,6 @@ import '@/util/date.js';
 import {store} from '@/store/store.js';
 import * as Cookies from "js-cookie";
 
-
 Vue.use(iView);
 Vue.prototype.$cookie = Cookies
 new Vue({

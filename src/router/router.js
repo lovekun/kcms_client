@@ -21,9 +21,17 @@ import horizontalScrollList from "@/views/list/horizontalScrollList.vue"
 import editableList from "@/views/list/editableList.vue"
 import exportableList from "@/views/list/exportableList.vue"
 import multiShowList from "@/views/list/multiShowList.vue"
+import locking from "@/views/components/components/locking-page.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
+
+const lockingRouter = {
+    path: '/locking',
+    name: 'locking',
+    component: locking
+};
+
 
 const indexRouter = {
     path: '/',
@@ -50,8 +58,7 @@ const mainRouter = {
         title: 'Main - 首页'
     },
     component: main,
-    children: [
-        {
+    children: [{
             path: 'infos',
             name: 'infos',
             component: infos
@@ -60,13 +67,11 @@ const mainRouter = {
             path: 'setting',
             name: 'setting',
             component: setting,
-            children: [
-                {
-                    path: 'manage',
-                    name: 'manage0',
-                    component: manage
-                }
-            ]
+            children: [{
+                path: 'manage',
+                name: 'manage0',
+                component: manage
+            }]
         },
         {
             path: 'manage',
@@ -140,14 +145,15 @@ const mainRouter = {
             },
             component: index
         }
-        
+
     ]
 };
 
 const routers = [
     indexRouter,
     loginRouter,
-    mainRouter
+    mainRouter,
+    lockingRouter
 ];
 
 const RouterConfig = {
