@@ -3,10 +3,10 @@
 </style>
 <template>
     <navigate0 class="main0">
-    <tag></tag>
-    <div class="main0-router" >
-        <router-view></router-view>
-    </div>
+    <!-- <tag></tag> -->
+    <!-- <div class="main0-router" > -->
+        <router-view class="main0-router"></router-view>
+        <!-- </div> -->
     </navigate0>
 </template>
 <script>

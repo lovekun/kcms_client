@@ -2,13 +2,30 @@
 @import "./tag.less";
 </style>
 <template>
-    <Row class="tag">
-        <Col span="20" class="tag-item">
+    <div class="tag">
+        <div style="display: inline-block;line-height: 40px;width: 40px;float:left;">
+            <Button type="text" size="default">
+                <Icon type="chevron-left"></Icon>
+            </Button>
+        </div>
+        <div style="display: inline-block;line-height: 40px;width: 1006px;">
             <Tag type="dot" @click.native="tagClick(item)" v-for="item in tagList" :key="item" :name="item" :closable="item === 'index' ? false : true" @on-close="handleClose(item)">{{ item }}</Tag>
-        </Col>
-        <Col span="2" class="tag-close"><Button type="text" @click="closeOthers">关闭其他</Button></Col>
-        <Col span="2" class="tag-close"><Button type="text" class="tag-close-all" @click="closeAll">关闭所有</Button></Col>
-    </Row>
+        </div>
+        <Dropdown style="width: 40px;float:right;margin-right: 40px" placement="bottom">
+        <Button type="text" size="default">
+            <Icon type="ios-close-empty" size="30"></Icon>
+        </Button>
+        <DropdownMenu slot="list">
+        <DropdownItem>关闭其他</DropdownItem>
+        <DropdownItem>关闭所有</DropdownItem>
+        </DropdownMenu>
+        </Dropdown>
+        <div style="display: inline-block;line-height: 40px;width: 40px;float:right;">
+            <Button type="text" size="default">
+                <Icon type="chevron-right"></Icon>
+            </Button>
+        </div>
+    </div>
 </template>
 <script>
 export default {

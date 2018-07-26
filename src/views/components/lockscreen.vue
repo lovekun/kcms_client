@@ -1,9 +1,9 @@
 <template>
-    <div @click="lockScreen" class="lock-screen-btn-con">
+    <Button type="text" @click="lockScreen">
         <Tooltip content="锁屏" placement="bottom">
             <Icon type="locked" :size="20"></Icon>
         </Tooltip>
-    </div>
+    </Button>
 </template>
 
 <script>

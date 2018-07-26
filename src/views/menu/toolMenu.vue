@@ -1,22 +1,15 @@
 <template>
     <div>
         <Button type="text">
-            <Icon :size="25" color="white" type="email"></Icon>
+            <Icon :size="25" type="email"></Icon>
         </Button>
-        <!--
-            <Button type="text">
-            <Icon :size="18" color="white" type="locked"></Icon>
-            </Button>
-        -->
-        <lock-screen style="display:inline-block"></lock-screen>
+        <lock-screen style="width: 50px;"></lock-screen>
+        <!-- <full-screen style="display:inline-block;line-height: 50;height: 50px;" v-model="isFullScreen" @on-change="fullscreenChange"></full-screen> -->
+        <full-screen></full-screen>
 
-        <full-screen style="display:inline-block" v-model="isFullScreen" @on-change="fullscreenChange"></full-screen>
-        <!--
-            <Button type="text">
-            <Icon :size="25" color="white" type="arrow-expand"></Icon>
-            </Button>
-        -->
-        <Input icon="ios-search" placeholder="search..." style="width: 200px"></Input>
+        <div style="display: inline-block; line-height: 50px;">
+            <Input type="text" icon="ios-search" placeholder="search..." style="width: 200px;"></Input>
+        </div>
     </div>
 </template>
 <script>
