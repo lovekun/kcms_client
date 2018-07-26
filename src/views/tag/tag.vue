@@ -3,15 +3,15 @@
 </style>
 <template>
     <div class="tag">
-        <div style="display: inline-block;line-height: 40px;width: 40px;float:left;">
+        <div class="tab-left" style="display: inline-block;line-height: 40px;width: 40px;float:left;">
             <Button type="text" size="default">
                 <Icon type="chevron-left"></Icon>
             </Button>
         </div>
-        <div style="display: inline-block;line-height: 40px;width: 1006px;">
+        <div class="tag-bar">
             <Tag type="dot" @click.native="tagClick(item)" v-for="item in tagList" :key="item" :name="item" :closable="item === 'index' ? false : true" @on-close="handleClose(item)">{{ item }}</Tag>
         </div>
-        <Dropdown style="width: 40px;float:right;margin-right: 40px" placement="bottom">
+        <Dropdown class="tag-close" style="width: 40px;float:right;margin-right: 40px" placement="bottom">
         <Button type="text" size="default">
             <Icon type="ios-close-empty" size="30"></Icon>
         </Button>
@@ -20,7 +20,7 @@
         <DropdownItem>关闭所有</DropdownItem>
         </DropdownMenu>
         </Dropdown>
-        <div style="display: inline-block;line-height: 40px;width: 40px;float:right;">
+        <div class="tag-right" style="display: inline-block;line-height: 40px;width: 40px;float:right;">
             <Button type="text" size="default">
                 <Icon type="chevron-right"></Icon>
             </Button>
