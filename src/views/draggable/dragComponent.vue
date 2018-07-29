@@ -2,8 +2,8 @@
 
 </style>
 <template>
-    <div style="height: 100%;padding: 10px;">
-        <Row :gutter="32">
+    <div style="height: 100%;">
+        <Row :gutter="32" style="margin:0px">
         <Col span="12">
         <Card style="height: 500px;">
             <draggable v-model="list" class="dragArea" :options="{group:'people'}" style="height: 500px;">
