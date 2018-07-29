@@ -41,7 +41,8 @@
 export default {
     data () {
         return {
-            list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+            invokeIdCnt: 0
         }
     },
     methods: {
@@ -56,6 +57,40 @@ export default {
                 }, 2000);
             });
         }
-    }
+
+    },
+    mounted: function() {
+        /*
+        var ws = new WebSocket('ws://localhost:61614/stomp', 'stomp');
+        switch (ws.readyState) {
+            case WebSocket.CONNECTING:
+            console.log("ws connecting");
+            break;
+            case WebSocket.OPEN:
+            console.log("ws open");
+
+            break;
+            case WebSocket.CLOSING:
+            console.log("ws clonsing");
+
+            break;
+            case WebSocket.CLOSED:
+            console.log("ws closed");
+            break;
+            default:
+            console.log("ws...");
+            break;
+        }
+        ws.onopen = function () {
+            ws.send('Hello Server!');
+            console.log("ws connect");
+        }
+        ws.onmessage = function(evt) {
+            console.log( "Received Message: " + evt.data);
+            ws.close();
+        };
+         */
+}
+
 }
 </script>
