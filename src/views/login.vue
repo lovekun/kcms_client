@@ -1,79 +1,66 @@
 <style lang="less">
-    // css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
-    @import "~@/views/login.less";
+// css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
+@import "~@/views/login.less";
 </style>
 
 <template>
-    <!--
     <div id="login">
         <Card class="card">
-            <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
-            <FormItem prop="user">
-                <Input type="text" v-model="formInline.user" placeholder="Username">
-                    <Icon type="ios-person-outline" slot="prepend"></Icon>
-                </Input>
+        <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+            <FormItem prop="username">
+            <Input type="text" v-model="formInline.username" placeholder="Username">
+            <Icon type="ios-person-outline" slot="prepend"></Icon>
+            </Input>
             </FormItem>
             <FormItem prop="password">
-                <Input type="password" v-model="formInline.password" placeholder="Password">
-                    <Icon type="ios-locked-outline" slot="prepend"></Icon>
-                </Input>
+            <Input type="password" v-model="formInline.password" placeholder="Password">
+            <Icon type="ios-locked-outline" slot="prepend"></Icon>
+            </Input>
             </FormItem>
             <FormItem>
-                <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
+            <Button type="primary" @click="handleSubmit('formInline')">Signin</Button>
             </FormItem>
-            </Form>
+        </Form>
         </Card>
-        </div>
-    -->
-    <div style="width: 100%; height: 100%; padding: 30px">
-    <Row :gutter="16">
-        <Col span="8">
-            <div>test</div>
-        </Col>
-        <Col span="8">
-            <div>test</div>
-        </Col>
-<Col span="8">
-            <div>test</div>
-        </Col>
-        </Row>
     </div>
-    </template>
+</template>
 <script>
-    export default {
-        data () {
-            return {
-                formInline: {
-                    user: 'admin',
-                    password: 'admin123'
-                },
-                ruleInline: {
-                    user: [
-                        { required: true, message: 'Please fill in the user name', trigger: 'blur' }
-                    ],
-                    password: [
-                        { required: true, message: 'Please fill in the password.', trigger: 'blur' },
-                        { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
-                    ]
-                }
-            }
-        },
-        methods: {
-            handleSubmit(name) {
-                this.$refs[name].validate((valid) => {
-                    if (valid) {
-                        this.$store.dispatch('login', this.formInline)
-                        .then(() => {
-                            this.$Message.success('Login Success!');
-                            this.$router.push({
-                                name: 'main'
-                            });   
-                        });
-                    } else {
-                        this.$Message.error('Login Fail!');
-                    }
-                })
+export default {
+    data () {
+        return {
+            formInline: {
+                username: 'admin',
+                password: 'admin123'
+            },
+            ruleInline: {
+                username: [
+                    { required: true, message: 'Please fill in the user name', trigger: 'blur' }
+                ],
+                password: [
+                    { required: true, message: 'Please fill in the password.', trigger: 'blur' },
+                    { type: 'string', min: 6, message: 'The password length cannot be less than 6 bits', trigger: 'blur' }
+                ]
             }
         }
+    },
+    methods: {
+        handleSubmit(name) {
+            var vx = this;
+            this.$refs[name].validate((valid) => {
+                if (valid) {
+                    this.$store.dispatch('login', this.formInline)
+                        .then(function(value) {
+                            vx.$Message.success('Login Success!');
+                            vx.$cookie.set("user", vx.$store.state.user)
+                            vx.$router.push({
+                                name: 'main'
+                            });
+                        }).catch(function(error) {
+                            vx.$Message.error(error);
+                        });
+                }
+            })
+        }
     }
+}
 </script>

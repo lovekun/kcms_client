@@ -13,7 +13,12 @@
         text-align: center;
     }
     &-uncollapsed {
-        height: calc(100% - 60px);
+        height: calc(100% - 50px);
+        overflow-y: scroll;
+        overflow-x: hidden;
+        &::-webkit-scrollbar {      // 隐藏滚动条，好像不兼容IE
+            display: none;
+        }
     }
     &-collapsed {
         height: calc(100% - 60px);
@@ -23,49 +28,20 @@
 }
 
 .top {
-    background: @navigateBackgroundColor;
-    transition: margin .3s;
-    height: @topHeight;
+    height: 90px;
     width: 100%;
-    &-collapse-toggle {
-        display: inline-block;
-        &-icon {
-            line-height: 60px;
-            font-size: 35px;
-            color: #ffffff;
-            margin-left: 20px;
-        }
-    }
+
     &-breadcrumb {
         display: inline-block;
-        margin-left: 30px;
-        span {
-            color: #ffffff;
-        }
+        margin-left: 10px;
+        line-height: 50px;
     }
-    &-user {
-        display: inline-block;
-        float: right;
-        color: #ffffff;
-        line-height: @collapsedWidth;
-        &-menu {
-            background: @navigateBackgroundColor;
-            color: #ffffff;
-            margin-right: 15px;
-            span {
-                color: white;
-                margin-left: 5px;
-            }
-            &-item {
-                width: 200px;
-            }
-        }
-    }
+
 }
 
 .content {
     transition: margin .3s;
     width: 100%;
-    height: calc(100% - 60px);
+    height: calc(100% - 100px);
     background: #f0f0f0;
 }

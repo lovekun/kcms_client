@@ -21,9 +21,18 @@ import horizontalScrollList from "@/views/list/horizontalScrollList.vue"
 import editableList from "@/views/list/editableList.vue"
 import exportableList from "@/views/list/exportableList.vue"
 import multiShowList from "@/views/list/multiShowList.vue"
+import locking from "@/views/components/components/locking-page.vue";
+import message from "@/views/message/message.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
+
+const lockingRouter = {
+    path: '/locking',
+    name: 'locking',
+    component: locking
+};
+
 
 const indexRouter = {
     path: '/',
@@ -50,8 +59,7 @@ const mainRouter = {
         title: 'Main - 首页'
     },
     component: main,
-    children: [
-        {
+    children: [{
             path: 'infos',
             name: 'infos',
             component: infos
@@ -60,13 +68,11 @@ const mainRouter = {
             path: 'setting',
             name: 'setting',
             component: setting,
-            children: [
-                {
-                    path: 'manage',
-                    name: 'manage0',
-                    component: manage
-                }
-            ]
+            children: [{
+                path: 'manage',
+                name: 'manage0',
+                component: manage
+            }]
         },
         {
             path: 'manage',
@@ -109,7 +115,27 @@ const mainRouter = {
         },
         {
             path: 'components/testPage',
-            name: 'mytree',
+            name: 'test',
+            component: multiShowList
+        },
+        {
+            path: 'table/horizontalScrollList',
+            name: 'horizontalScrollList',
+            component: horizontalScrollList
+        },
+        {
+            path: 'table/editableList',
+            name: 'editableList',
+            component: editableList
+        },
+        {
+            path: 'table/exportableList',
+            name: 'exportableList',
+            component: exportableList
+        },
+        {
+            path: 'table/multiShowList',
+            name: 'multiShowList',
             component: multiShowList
         },
         {
@@ -119,15 +145,21 @@ const mainRouter = {
                 title: 'Main - 首页'
             },
             component: index
+        },
+        {
+            path: 'message',
+            name: 'message',
+            component: message
         }
-        
+
     ]
 };
 
 const routers = [
     indexRouter,
     loginRouter,
-    mainRouter
+    mainRouter,
+    lockingRouter
 ];
 
 const RouterConfig = {
