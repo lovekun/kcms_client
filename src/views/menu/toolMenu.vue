@@ -1,6 +1,6 @@
 <template>
     <div>
-        <Button type="text">
+        <Button type="text" @click="openMessage">
             <Icon :size="25" type="email"></Icon>
         </Button>
         <lock-screen style="width: 50px;"></lock-screen>
@@ -33,6 +33,9 @@ export default {
         },
         fullscreenChange (isFullScreen) {
             // console.log(isFullScreen);
+        },
+        openMessage() {
+            this.$router.push('message');
         }
     }
 }

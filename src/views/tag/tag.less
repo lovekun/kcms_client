@@ -2,20 +2,35 @@
     width: 100%;
     height: 40px;
     background: #eee;
-    &-item {
-        overflow: hidden;
+    font-size: 0;
+    &-bar {
         display: inline-block;
+        overflow: hidden;
+        overflow-x: auto;
+        list-style: none;
+        width: calc(100% - 120px);
+        height: 40px;
         line-height: 40px;
+        white-space: nowrap;
         &::-webkit-scrollbar {      // 隐藏滚动条，好像不兼容IE
             display: none;
         }
     }
-    &-bar {
+    &-right {
         display: inline-block;
-        overflow-x: auto;
-        list-style: none;
-        width: cal(100% - 120px);
         line-height: 40px;
-
+        width: 40px;
+        vertical-align: text-bottom;
+    }
+    &-close {
+        width: 40px;
+        height: 40px;
+        vertical-align: text-bottom;
+    }
+    &-left {
+        display: inline-block;
+        width: 40px;
+        line-height: 40px;
+        vertical-align: text-bottom;
     }
 }

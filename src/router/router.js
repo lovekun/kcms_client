@@ -22,6 +22,7 @@ import editableList from "@/views/list/editableList.vue"
 import exportableList from "@/views/list/exportableList.vue"
 import multiShowList from "@/views/list/multiShowList.vue"
 import locking from "@/views/components/components/locking-page.vue";
+import message from "@/views/message/message.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
@@ -144,6 +145,11 @@ const mainRouter = {
                 title: 'Main - 首页'
             },
             component: index
+        },
+        {
+            path: 'message',
+            name: 'message',
+            component: message
         }
 
     ]

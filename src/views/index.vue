@@ -8,7 +8,7 @@
 </style>
 <template>
 
-    <div style="widht: 100%;height: 100%;background: #ddd">
+    <div style="width: 100%;height: 100%;background: #ddd">
         <Row :gutter=16 style="height: 35%;margin: 0px;padding-top: 5px;">
         <Col span="6">
         <Card :bordered="false">
