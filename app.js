@@ -42,7 +42,7 @@ function initServer() {
     User.countDocuments({}, function(error, count) {
         if(count == 0) {
             let admin = new User({"username": "admin", "password": "admin123"});
-            // admin.save().then( () => console.log("user"));
+    // admin.save().then( () => console.log("user"));
             admin.save();
         }
     });

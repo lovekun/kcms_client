@@ -1,4 +1,4 @@
-<style lang="less">
+<style scoped lang="less">
 // css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
 @import "~@/views/login.less";
 </style>
@@ -6,7 +6,11 @@
 <template>
     <div id="login">
         <Card class="card">
-        <Form ref="formInline" :model="formInline" :rules="ruleInline" inline>
+        <p slot="title">
+        <Icon type="social-html5"></Icon>
+        Login
+        </p>
+        <Form class="form" ref="formInline" :model="formInline" :rules="ruleInline">
             <FormItem prop="username">
             <Input type="text" v-model="formInline.username" placeholder="Username">
             <Icon type="ios-person-outline" slot="prepend"></Icon>
