@@ -88,6 +88,11 @@ const mainRouter = {
             },
         },
         {
+            path: 'message',
+            name: 'message',
+            component: message
+        },
+        {
             path: 'components/tree',
             name: 'tree',
             // component: tree
@@ -145,12 +150,8 @@ const mainRouter = {
                 title: 'Main - 首页'
             },
             component: index
-        },
-        {
-            path: 'message',
-            name: 'message',
-            component: message
         }
+
 
     ]
 };

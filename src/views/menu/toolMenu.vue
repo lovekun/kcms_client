@@ -35,7 +35,7 @@ export default {
             // console.log(isFullScreen);
         },
         openMessage() {
-            this.$router.push('message');
+            this.$router.push({name: 'message'});
         }
     }
 }
