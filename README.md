@@ -16,9 +16,10 @@ kcms系统是基于Vue.js，搭配使用iView UI组件库形成的一套前端�
 7. 可拖动组件基于sortablejs和vuedraggable实现
 8. 数据的动态展示效果，基于countup实现
 
-
+前端技术框架:
 kcms也提供了基于express的后台服务接口，数据库采用MongoDB。
 
+项目功能:
 + 登录/登出
 + 组件
     - 图表
