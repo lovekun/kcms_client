@@ -1,6 +1,5 @@
 <template>
-	<div style="width: 100px;height: 100px">
-		fdasfsf
+	<div>
 	</div>
 </template>
 <script>

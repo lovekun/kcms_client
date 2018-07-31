@@ -13,7 +13,7 @@ module.exports = {
         port: 8000,
         hot: true,
         open: true,
-        openPage: "#/main/",
+        openPage: "#/login",
     },
     entry: {
         index: '@/index.js',
