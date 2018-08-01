@@ -27,8 +27,9 @@
         </div>
         <!-- 页面主体内容 -->
         <!-- <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"> -->
-        <slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot>
+        <slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot> 
         <!-- </div> -->
+        
     </div>
 </template>
 <script>
@@ -53,18 +54,21 @@ export default {
     },
     data() {
         return {
-            isCollapsed: false,
             toPath: '#/main/index'
         }
     },
     computed: {
         currentPath() {
             return this.$store.state.currentPath;
+        },
+        isCollapsed() {
+            return this.$store.state.isCollapsed;
         }
     },
     methods: {
         collapseMenu() {
-            this.isCollapsed = !this.isCollapsed;
+            // this.isCollapsed = !this.isCollapsed;
+            this.$store.commit('toggleMenu');
         },
         menuSelect(name) {
             if(this.$store.state.tagList.indexOf(name) === -1) {
