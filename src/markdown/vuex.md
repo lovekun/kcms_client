@@ -1,1 +1,0 @@
-https://mobilesite.github.io/2016/12/18/vuex-introduction/

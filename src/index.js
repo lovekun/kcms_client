@@ -24,7 +24,6 @@ new Vue({
         };
     },
     mounted: function() {
-        console.log('aaaa');
         var url = "ws://localhost:61614/stomp";
         var client = Stomp.client(url);
         var connect_callback = function() {
