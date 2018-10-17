@@ -36,6 +36,7 @@ export default {
                 'title': 'child-2'
             }
         ]
-    }
+    },
+    isCollapsed: false
 
 }

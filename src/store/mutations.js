@@ -3,6 +3,9 @@ import user from '@/data/user.js';
 import '@/util/date.js';
 
 export default {
+    toggleMenu() {
+        this.state.isCollapsed = !this.state.isCollapsed;
+    },
     updateUserInfo(state, payload) {
         this.state.user = payload;
         this.state.user.lastLoginTime = new Date().Format("yyyy-MM-dd")

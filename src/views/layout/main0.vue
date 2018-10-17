@@ -3,7 +3,7 @@
 </style>
 <template>
     <navigate0 class="main0">
-    <router-view class="main0-router"></router-view>
+    <router-view class="main0-router" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></router-view>
     </navigate0>
 </template>
 <script>
@@ -16,13 +16,15 @@ export default {
     },
     data () {
         return {
-            isCollapsed: false,
             toPath: '#/main/index'
         }
     },
     computed: {
         tagList() {
             return this.$store.state.tagList;
+        },
+        isCollapsed() {
+            return this.$store.state.isCollapsed;
         }
     },
     methods: {
