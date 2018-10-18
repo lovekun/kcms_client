@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 function resolve (dir) {
     return path.join(__dirname, dir);
@@ -10,10 +11,11 @@ module.exports = {
   devtool: 'none',
   mode: "production",
   entry: {
-    index: '@/index.js'
+    index: '@/index.js',
   },
   output: {
-    filename: "[name].bundle.js"
+    filename: "[name].bundle.js",
+    path: path.resolve(__dirname, '../dist')
   },
   module: {
     rules: [
@@ -49,14 +51,21 @@ module.exports = {
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['dist'], {
+      root: path.join(__dirname, '..')
+    }),
     new HtmlWebpackPlugin({
-      title: "kcms_client",
+      // title: "kcms_client",
       template: "./index.html"
+    }),
+    new webpack.DefinePlugin({
+        HAS_SERVER: true
     })
   ],
   resolve: {
         extensions: ['.js', '.vue'],
         alias: {
+          'vue': 'vue/dist/vue.esm.js',     // 不加这一行，打包后，express加载为空白页
             '@': resolve('../src'),
         }
     }

@@ -1,6 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-var HtmlwebpackPlugin = require('html-webpack-plugin');
+const HtmlwebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 function resolve (dir) {
     return path.join(__dirname, dir);
@@ -29,11 +30,6 @@ module.exports = {
                 test: /\.vue$/,
                 loader: 'vue-loader',
             },
-
-            // {
-            //     test: /src\/.*?js$/,
-            //     loader: 'babel-loader'
-            // },
             {
                 test: /\.js$/,
                 loader: 'babel-loader',
@@ -76,6 +72,9 @@ module.exports = {
         new webpack.ProvidePlugin({
             jQuery: "jquery",
             $: "jquery"
+        }),
+        new CleanWebpackPlugin(['dist'], {
+          root: path.join(__dirname, '..')
         }),
         new HtmlwebpackPlugin({
             template: './index.html'    // 该路径是根据启动node服务的路径,我理解为启动项目的根路径

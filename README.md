@@ -1,10 +1,7 @@
-# kcms
-
-#### 项目介绍
+# 项目介绍
 kcms系统是基于Vue.js，搭配使用iView UI组件库形成的一套前端管理系统客户端框架。
 
-
-#### 软件架构
+# 软件架构
 软件架构说明:
 前端技术框架
 1. kcms系统基于webpack工具进行打包和编译。
@@ -38,7 +35,7 @@ kcms也提供了基于express的后台服务接口，数据库采用MongoDB。
 + 收缩侧边栏
 + 面包屑导航
 
-#### 安装教程
+# 安装教程
 安装依赖：
 ```
 npm install
@@ -49,7 +46,7 @@ npm install
 npm run package
 ```
 
-#### 使用说明
+# 使用说明
 开发:
 ```
 npm run dev
@@ -60,7 +57,11 @@ npm run dev
 npm run pac-express
 ```
 
-#### 参与贡献
+# webpack 配置信息
+## 插件配置
+
+
+# 参与贡献
 
 1. Fork 本项目
 2. 新建 Feat_xxx 分支
@@ -68,3 +69,4 @@ npm run pac-express
 4. 新建 Pull Request
 
 # TODO
+目前更新了配置，新加两种一种local，一种pro, local使用devServer 插件，用于开发， pro 打包，放置于express服务目录中，用于身材环境。这两种配置待进一步配置，配置完成后，将取代其他配置

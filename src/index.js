@@ -24,14 +24,14 @@ new Vue({
         };
     },
     mounted: function() {
-        var url = "ws://localhost:61614/stomp";
-        var client = Stomp.client(url);
-        var connect_callback = function() {
-            console.log('connected......');
-            client.send("/queue/test", {
-                priority: 9
-            }, "Hello, STOMP");
-        }
-        client.connect('admin', 'admin', connect_callback);
+        // var url = "ws://localhost:61614/stomp";
+        // var client = Stomp.client(url);
+        // var connect_callback = function() {
+        //     console.log('connected......');
+        //     client.send("/queue/test", {
+        //         priority: 9
+        //     }, "Hello, STOMP");
+        // }
+        // client.connect('admin', 'admin', connect_callback);
     }
 }).$mount('#app');
