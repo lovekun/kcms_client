@@ -7,7 +7,9 @@
         "package": "webpack --config build/webpack.config.js",
         "start": "webpack-dev-server --config build/webpack.config.js --watch --progress",
         "dev": "webpack-dev-server --config build/webpack.dev.config.js --watch --progress",
-        "pac-express": "webpack --config build/webpack.express.config.js"
+        "pac-express": "webpack --config build/webpack.express.config.js",
+        "pro": "webpack --config build/webpack.pro.config.js",
+        "local": "webpack-dev-server --config build/webpack.local.config.js"
     },
     "keywords": [],
     "author": "",
