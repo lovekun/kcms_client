@@ -12,9 +12,10 @@ app.use(bodyParser.json())
 
 app.use(express.static('./dist'));
 
-app.get('/', function (req, res) {
-    res.sendfile('./dist/index.html');
-});
+// app.get('/', function (req, res) {
+//   console.log("send index.html");
+//     res.sendFile('./dist/index.html');
+// });
 
 app.post('/login', function(req, res){
     let username = req.body.username;

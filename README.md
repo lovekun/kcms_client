@@ -59,7 +59,34 @@ npm run pac-express
 
 # webpack 配置信息
 ## 插件配置
+1. html-webpack-plugin
+  提供html模板，自动生成引入了打包后的js的html，并放置在dist下
 
+2. clean-webpack-plugin
+  打包前，清空dist目录
+
+3. splitChunks
+  分包，现在对所有的依赖包采用默认配置，导致打出来的第三方包太大，还需要优化。
+
+4. entry
+  单页面应用，就用一个entry就够了。之前会把第三方包的引入单独写在一个js文件中，手动做分包，配合splitChunks进行分包，感觉这种设计并不好。
+
+5. 热编译
+  是否用 HotModuleReplacementPlugin 插件，以及dev-server是否用hot属性，inline属性
+
+6. webpack.DefinePlugin
+  配置的 HAS_SERVER 这个全局变量，actions.js 中会根据这个变量改变请求数据的方式
+
+7. webpack.ProvidePlugin
+  定义了两个jquery,这样就不需要在js里再次引入了。
+
+# mock数据
+目前选择jsonserver + fakejs。
+
+其他可选方案包括mockserver, mockjs
+
+# 单元测试
+Mocha
 
 # 参与贡献
 

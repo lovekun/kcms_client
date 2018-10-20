@@ -11,7 +11,7 @@ module.exports = {
   devtool: 'none',
   mode: "production",
   entry: {
-    index: '@/index.js',
+    index: '@/index.js'
   },
   output: {
     filename: "[name].bundle.js",
@@ -25,6 +25,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
+        exclude: /node_modules/,  // 不加这一行，会有warning: The code generator has deoptimised the styling of  as it exceeds the max of "500KB".
         loader: 'babel-loader',
       },
       {
@@ -50,13 +51,39 @@ module.exports = {
       }
     ]
   },
+  optimization: {
+      splitChunks: {
+        chunks: 'all',
+        minSize: 30000,
+        minChunks: 1,
+        maxAsyncRequests: 5,
+        maxInitialRequests: 3,
+        automaticNameDelimiter: '~',
+        name: true,
+        cacheGroups: {
+          vendors: {
+            test: /[\\/]node_modules[\\/]/,
+            priority: -10
+          },
+          default: {
+            minChunks: 2,
+            priority: -20,
+            reuseExistingChunk: true
+          }
+        }
+      }
+  },
   plugins: [
     new CleanWebpackPlugin(['dist'], {
       root: path.join(__dirname, '..')
     }),
     new HtmlWebpackPlugin({
-      // title: "kcms_client",
+      title: "kcms_client",
       template: "./index.html"
+    }),
+    new webpack.ProvidePlugin({
+        jQuery: "jquery",
+        $: "jquery"
     }),
     new webpack.DefinePlugin({
         HAS_SERVER: true
@@ -66,6 +93,7 @@ module.exports = {
         extensions: ['.js', '.vue'],
         alias: {
           'vue': 'vue/dist/vue.esm.js',     // 不加这一行，打包后，express加载为空白页
+          'iview': 'iview/dist/iview.min.js',
             '@': resolve('../src'),
         }
     }
