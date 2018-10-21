@@ -30,7 +30,7 @@ server.use((req, res, next) => {
 	next()
 })
 
-server.post('/echo', (req, res) => {
+server.post('/login', (req, res) => {
 	console.log(req);
 	res.jsonp(req.query)
 })
