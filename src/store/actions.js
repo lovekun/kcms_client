@@ -4,9 +4,7 @@ import mutations from './mutations';
 import {
 	store
 } from './store.js';
-import data from '@/../mock/mock.js';
-import data1 from '@/../mock/listMock.js';
-import treeData from '@/../mock/treeMock.js';
+import {login, list} from '@/../mock/mock.js';
 
 export default {
 	login(context, payload) {

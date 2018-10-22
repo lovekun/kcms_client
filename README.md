@@ -96,4 +96,4 @@ Mocha
 4. 新建 Pull Request
 
 # TODO
-目前更新了配置，新加两种一种local，一种pro, local使用devServer 插件，用于开发， pro 打包，放置于express服务目录中，用于身材环境。这两种配置待进一步配置，配置完成后，将取代其他配置
+页面布局写入state, 如需更改，需要手动更改，setting页面的配置还没有更新。

@@ -37,6 +37,7 @@ export default {
             }
         ]
     },
-    isCollapsed: false
+    isCollapsed: false,
+    mainPageType: 'main0'
 
 }
