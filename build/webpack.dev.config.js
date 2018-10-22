@@ -19,16 +19,16 @@ module.exports = {
     open: true,
     openPage: "#/login/",
     watchContentBase: true,
-    proxy: {
-      '/api': {
-        target: 'http://localhost:3000',
-        secure: false,
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': ''
-        }
-      }
-    }
+    // proxy: {
+    //   '/api': {
+    //     target: 'http://localhost:3000',
+    //     secure: false,
+    //     changeOrigin: true,
+    //     pathRewrite: {
+    //       '^/api': ''
+    //     }
+    //   }
+    // }
   },
   entry: {
     index: '@/index.js'
@@ -109,7 +109,7 @@ module.exports = {
       // HAS_SERVER: true,
       // TODO: 根据 process.env 定制不同环境下的地址
       // 配置Axios请求的基准路径
-      baseURL: JSON.stringify('http://localhost:8000/api')
+      baseURL: JSON.stringify('http://localhost:8000/')
 
     })
   ],

@@ -81,9 +81,9 @@ npm run pac-express
   定义了两个jquery,这样就不需要在js里再次引入了。
 
 # mock数据
-目前选择jsonserver + fakejs。
+目前选择mockjs + fakejs。
 
-其他可选方案包括mockserver, mockjs
+其他可选方案包括mockserver, jsonserver, moco
 
 # 单元测试
 Mocha

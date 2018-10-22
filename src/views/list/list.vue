@@ -73,7 +73,6 @@ export default {
             this.$store.dispatch('getList');
             this.columns = this.$store.state.columnName;
             this.data = this.$store.state.listData;
-            console.log(this.data);
         },
         handleSubmit(name) {
             this.$refs[name].validate((valid) => {
