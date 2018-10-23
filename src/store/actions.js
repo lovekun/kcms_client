@@ -1,5 +1,4 @@
 import axios from 'axios';
-import user from '@/data/user.js';
 import mutations from './mutations';
 import {
 	store
@@ -9,6 +8,10 @@ import {login, list} from '@/../mock/mock.js';
 export default {
 	login(context, payload) {
 		var vx = this;
+        var user = {
+            "username": payload.username,
+            "password": payload.password
+        }
 		return new Promise(function(resolve, reject) {
 			axios.post(baseURL + '/login', {
 				username: payload.username,

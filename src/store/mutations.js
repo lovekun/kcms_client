@@ -1,5 +1,4 @@
 import axios from 'axios';
-import user from '@/data/user.js';
 import '@/util/date.js';
 
 export default {
