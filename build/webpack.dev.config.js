@@ -10,16 +10,16 @@ function resolve(dir) {
 module.exports = {
   devtool: '#source-map',
   mode: "development",
-  devServer: {
-    // 为contentBase 指定多个路径,第二个路径为数据访问路径
-    contentBase: [path.join(__dirname, "../dist"), path.join(__dirname, "../src/data")],
-    port: 8000,
-    inline: true,
-    hot: true,
-    open: true,
-    openPage: "#/login/",
-    watchContentBase: true,
-    // proxy: {
+  	devServer: {
+  		// 为contentBase 指定多个路径,第二个路径为数据访问路径
+  		contentBase: [path.join(__dirname, "../dist"), path.join(__dirname, "../src/data")],
+  		port: 8000,
+  		inline: true,
+  		hot: true,
+  		open: true,
+  		openPage: "#/login/",
+  		watchContentBase: true,
+  		// proxy: {
     //   '/api': {
     //     target: 'http://localhost:3000',
     //     secure: false,
@@ -43,7 +43,7 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        exclude: /node_modules/,
+        exclude: /node_modules/,       // node_modules 中的依赖包是已经编译过的，无需再用babel-loader重新编译，可以直接排除
         loader: 'babel-loader',
       },
       {
@@ -55,7 +55,14 @@ module.exports = {
       },
       {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-        loader: 'url-loader?limit=1024'
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 1024,
+                name: 'resources/[path][name]-[hash:8].[ext]'
+            }
+        }]
+        // loader: 'url-loader?limit=1024'
       },
       {
         test: /\.less$/,

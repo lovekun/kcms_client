@@ -97,3 +97,7 @@ Mocha
 
 # TODO
 页面布局写入state, 如需更改，需要手动更改，setting页面的配置还没有更新。
+
+1. 添加 eslint
+2. 添加 editorconfig
+3. 添加husky,在git提交前添加钩子函数，确保提交后的代码是经过eslint检验的。

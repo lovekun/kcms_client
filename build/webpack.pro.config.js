@@ -37,7 +37,14 @@ module.exports = {
       },
       {
         test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/,
-        loader: 'url-loader?limit=1024'
+        use: [{
+            loader: 'url-loader',
+            options: {
+                limit: 1024,
+                name: 'resources/[path][name]-[hash:8].[ext]'
+            }
+        }]
+        // loader: 'url-loader?limit=1024'
       },
       {
           test: /\.less$/,
@@ -86,7 +93,12 @@ module.exports = {
         $: "jquery"
     }),
     new webpack.DefinePlugin({
-        HAS_SERVER: true
+      // 不在区分是否启动前端的server,开发编码阶段，所有请求现在都请求到mockServer
+      // HAS_SERVER: true,
+      // TODO: 根据 process.env 定制不同环境下的地址
+      // 配置Axios请求的基准路径
+      baseURL: JSON.stringify('http://localhost:8000/')
+
     })
   ],
   resolve: {
