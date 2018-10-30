@@ -33,7 +33,6 @@ const lockingRouter = {
     component: locking
 };
 
-
 const indexRouter = {
     path: '/',
     name: 'indexpage',

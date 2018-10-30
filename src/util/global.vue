@@ -15,9 +15,9 @@
     Vue.prototype.test = "main1";
 
     export default {
-        mainPage: 'main1',
-        setmainPage(val) {
-            this.mainPage = val;
-        }
+        // mainPage: 'main1',
+        // setmainPage(val) {
+        //     this.mainPage = val;
+        // }
     }
 </script>

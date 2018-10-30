@@ -38,6 +38,6 @@ export default {
         ]
     },
     isCollapsed: false,
-    mainPageType: 'main0'
+    mainPageType: ''
 
 }

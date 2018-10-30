@@ -27,7 +27,7 @@
         </div>
         <!-- 页面主体内容 -->
         <!-- <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"> -->
-        <slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot> 
+        <slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot>
         <!-- </div> -->
         
     </div>

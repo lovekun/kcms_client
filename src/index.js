@@ -1,11 +1,9 @@
 import Vue from 'vue';
-import VueRouter from 'vue-router';
 import {
     router
 } from './router/router';
 import iView from 'iview';
 import '../node_modules/iview/dist/styles/iview.css';
-import Vuex from 'vuex';
 import '@/util/date.js';
 import {
     store
@@ -23,7 +21,13 @@ new Vue({
             a: 'main1'
         };
     },
+    methods: {
+        init() {
+            this.$store.state.mainPageType = 'main0'
+        }
+    },
     mounted: function() {
+        this.init();
         // var url = "ws://localhost:61614/stomp";
         // var client = Stomp.client(url);
         // var connect_callback = function() {
