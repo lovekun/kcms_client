@@ -4,6 +4,19 @@
 </style>
 
 <template>
+	<!--<div style="width: 100%;">-->
+		<!--<Row :gutter="16">-->
+			<!--<Col span="8" style="background: red">-->
+<!--fadfas-->
+			<!--</Col>-->
+			<!--<Col span="8" style="background: yellow">-->
+<!--fasfd-->
+			<!--</Col>-->
+			<!--<Col span="8" style="background: blue">-->
+<!--fasd-->
+			<!--</Col>-->
+		<!--</Row>-->
+	<!--</div>-->
 <div id="login">
 	<Card class="card">
 		<p slot="title">

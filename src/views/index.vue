@@ -8,7 +8,7 @@
 </style>
 <template>
     <div class="index">
-        <Row class="index-row1" :gutter=16>
+        <Row class="index-row1" :gutter="16">
         <Col span="6" style="height: 100%">
         <Card :bordered="false" style="height: 100%">
         <div slot="title" style="height: 120px;line-height: 120px">
