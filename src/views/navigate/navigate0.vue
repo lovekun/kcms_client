@@ -20,7 +20,8 @@
             <dropdown-menu class="menu-collapsed" v-show="isCollapsed" @dropdownMenuSelect="dropdownMenuSelect" @settingBtnClick="settingBtnClick"></dropdown-menu>
         </div>
         <!-- 顶部功能栏 -->
-        <div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">
+        <!--<div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">-->
+        <div class="top">
             <div style="width: 100%;height: 50px;">
                 <Button :style="{transform: 'rotateZ(' + (isCollapsed ? '-90' : '0') + 'deg)'}" type="text" @click="collapseMenu">
                     <Icon type="navicon" size="32"></Icon>
@@ -35,7 +36,8 @@
         </div>
         <!-- 页面主体内容 -->
         <!-- <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"> -->
-        <slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot>
+        <!--<slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot>-->
+        <slot></slot>
         <!-- </div> -->
         
     </div>

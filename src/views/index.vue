@@ -7,6 +7,20 @@
 }
 </style>
 <template>
+    <!--<div class="test">-->
+    <Row :gutter="16" style="margin-left:200px">
+    <Col span="8" style="background: red; padding-left: 0px">
+    fadfas
+    </Col>
+    <Col span="8" style="background: yellow">
+    fasfd
+    </Col>
+    <Col span="8" style="background: black">
+    fasd
+    </Col>
+    </Row>
+    <!--</div>-->
+    <!--
     <div class="index">
         <Row class="index-row1" :gutter="16">
         <Col span="6" style="height: 100%">
@@ -77,7 +91,7 @@
         </Col>
         </Row>
     </div>
-
+-->
 </template>
 <script>
 import ICountUp from 'vue-countup-v2';

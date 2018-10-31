@@ -3,8 +3,9 @@
 </style>
 <template>
     <navigate0 class="main0">
+        <router-view></router-view>
     <!--<router-view :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></router-view>-->
-        <router-view :style="{marginLeft: isCollapsed ? '60px' : '200px'}"></router-view>
+        <!--<router-view :style="{marginLeft: isCollapsed ? '60px' : '200px'}"></router-view>-->
     </navigate0>
 </template>
 <script>
