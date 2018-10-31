@@ -1,5 +1,11 @@
 <style scoped lang="less">
 @import "~@/views/navigate/navigate0.less";
+    /*.menu-uncollapsed {*/
+        /*width: 200px;*/
+    /*}*/
+    /*.menu-uncollapsed .v-leave { width: 50px; }*/
+    .menu-uncollapsed .v-leave-active {  transition: all .3s;}
+    /*.menu-uncollapsed .v-leave-to { width: 100px; opacity: 0;}*/
 </style>
 <template>
     <div>
@@ -8,7 +14,9 @@
             <div class="menu-logo">
                 <span>kcms</span>
             </div>
+            <transition>
             <collapse-menu class="menu-uncollapsed" v-show="!isCollapsed"  @menuSelect="menuSelect"></collapse-menu>
+            </transition>
             <dropdown-menu class="menu-collapsed" v-show="isCollapsed" @dropdownMenuSelect="dropdownMenuSelect" @settingBtnClick="settingBtnClick"></dropdown-menu>
         </div>
         <!-- 顶部功能栏 -->

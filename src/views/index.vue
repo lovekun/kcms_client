@@ -1,5 +1,5 @@
 <style scoped lang="less">
-@import "./index.less";
+    @import "~@/views/index.less";
 .iCountUp {
     font-size: 4em;
     margin: 0;
@@ -7,10 +7,10 @@
 }
 </style>
 <template>
-    <div style="width: 100%;height: 100%;background: #ddd">
-        <Row :gutter=16 style="height: 35%;margin: 0px;padding-top: 5px;">
-        <Col span="6">
-        <Card :bordered="false">
+    <div class="index">
+        <Row class="index-row1" :gutter=16>
+        <Col span="6" style="height: 100%">
+        <Card :bordered="false" style="height: 100%">
         <div slot="title" style="height: 120px;line-height: 120px">
             <img src="../images/avator.png" style="height: 60px; width: 60px;display: inline; vertical-align: middle;">
             <p style="display: inline;margin-left: 50px;font-size: 2em">{{ user.username }}</p>
@@ -18,8 +18,8 @@
         <p>最近登录时间: {{ user.lastLoginTime }}</p>
         </Card>
         </Col>
-        <Col span="6">
-        <Card :bordered="false" style="height: 200px;">
+        <Col span="6" style="height: 100%;">
+        <Card :bordered="false" style="height: 100%;" >
         <p slot="title">当前在线人数:</p>
         <div class="iCountUp">
             <ICountUp
@@ -33,8 +33,8 @@
         </div>
         </Card>
         </Col>
-        <Col span="6">
-        <Card :bordered="false" style="height: 200px;">
+        <Col span="6" style="height: 100%;">
+        <Card :bordered="false" style="height: 100%;">
         <p slot="title">当前设备数:</p>
         <div class="iCountUp">
             <ICountUp
@@ -48,8 +48,8 @@
         </div>
         </Card>
         </Col>
-        <Col span="6">
-        <Card :bordered="false" style="height: 200px;">
+        <Col span="6" style="height: 100%;">
+        <Card :bordered="false" style="height: 100%;">
         <p slot="title">当前服务器数:</p>
         <div class="iCountUp">
             <ICountUp
@@ -64,14 +64,14 @@
         </Card>
         </Col>
         </Row>
-        <Row :gutter=16 style="height: 65%;width: 100%;padding-top:5px;margin: 0px;">
-        <Col span="6">
-        <Card :bordered="false" style="height: 300px;">
-        <Table ref="selection" :columns="columns4" :data="data1" style="height: 200px;"></Table>
+        <Row :gutter=16 style="height: 65% ;width: 100%;padding-top:5px;margin: 0px;">
+        <Col span="6" style="height: 100%;">
+        <Card :bordered="false" style="height: 100%;">
+        <Table ref="selection" :columns="columns4" :data="data1" style="height: 100%;"></Table>
         </Card>
         </Col>
-        <Col span="18">
-        <Card :bordered="false" style="height: 300px;">
+        <Col span="18" style="height: 100%;">
+        <Card :bordered="false" style="height: 100%;">
         <chart></chart>
         </Card>
         </Col>
