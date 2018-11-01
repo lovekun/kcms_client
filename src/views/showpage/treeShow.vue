@@ -1,26 +1,24 @@
 <style scoped lang="less">
-.treeshow {
-    height: 100%;
-    width: 100%;
-}
+    @import "~@/views/showpage/treeShow.less";
+
 </style>
 <template>
     <div class="treeshow">
-        <Row :gutter=16 style="height: 100%;margin:0px;">
-        <Col span="8" style="height: 100%;">
-        <card :hover=true style="height: 100%">
+        <Row class="treeshow-row" :gutter=16>
+        <Col class="treeshow-row-col1" span="8">
+        <card class="treeshow-row-col1-card" :hover=true>
         <p>树形组件</p>
         <p>左侧为自定义树形组件</p>
         <p>右侧为渲染函数写的树形组件</p>
         </card>
         </Col>
-        <Col span="8" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;">
+        <Col class="treeshow-row-col2" span="8">
+        <Card class="treeshow-row-col2-card" :bordered="false">
         <tree0></tree0>
         </Card>
         </Col>
-        <Col span="8" style="height: 100%;">
-        <card style="height: 100%;">
+        <Col class="treeshow-row-col3" span="8">
+        <card class="treeshow-row-col3-card" style="height: 100%;">
         <tree1></tree1>
         </card>
         </Col>

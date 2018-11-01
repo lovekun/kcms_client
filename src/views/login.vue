@@ -2,22 +2,7 @@
 // css-loader 会把非根路径的url解析为相对路径，加~前缀才会解释成模块路径
 @import "~@/views/login.less";
 </style>
-
 <template>
-	<div>
-	<div style="width: 100%;">
-		<Row :gutter="16">
-			<Col span="8" style="background: red">
-fadfas
-			</Col>
-			<Col span="8" style="background: yellow">
-fasfd
-			</Col>
-			<Col span="8" style="background: blue">
-fasd
-			</Col>
-		</Row>
-	</div>
 <div id="login">
 	<Card class="card">
 		<p slot="title">
@@ -46,7 +31,6 @@ fasd
 		</Form>
 	</Card>
 </div>
-	</div>
 </template>
 <script>
 export default {

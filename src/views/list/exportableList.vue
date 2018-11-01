@@ -45,61 +45,61 @@ export default {
             {
                 "title": "Weak",
                 "key": "weak",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Signin",
                 "key": "signin",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Click",
                 "key": "click",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Active",
                 "key": "active",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "7, retained",
                 "key": "day7",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "30, retained",
                 "key": "day30",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "The next day left",
                 "key": "tomorrow",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Day Active",
                 "key": "day",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Week Active",
                 "key": "week",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             },
             {
                 "title": "Month Active",
                 "key": "month",
-                "width": 150,
+                // "width": 150,
                 "sortable": true
             }
             ],

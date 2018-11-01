@@ -2,12 +2,10 @@
 .item {
     height: 40px;
     line-height: 40px;
-    border: 1px solid #f0f0f0;
-    margin-left: this.depth * 20 + 'px';
 }
+
 .item:hover {
-    border:#aaa 0.5px solid;
-    // box-shadow:0 0 3px rgba(81, 81,81,0.8);
+    background: #d9d9d9;
 }
 .item-icon {
     margin-left: 20px;
@@ -24,14 +22,10 @@
     width: 35px;
     line-height: 40px;
 }
-.item-menu {
-    width: 40px;
-    height: 60px;
-}
 </style>
 <template>
-    <div>
-        <div class="item" @click="toggle" :style="{marginLeft: depth * 20 +  'px'}">
+    <div class="treenode">
+        <div class="item" @click="toggle" :style="{paddingLeft: depth * 20 +  'px'}">
             <Icon class="item-icon" :type="iconType"></Icon>
             <div class="item-data">{{treedata.title}}</div>
             <Dropdown class="item-operation" transfer @on-click="toggleOperation">

@@ -1,42 +1,23 @@
 <style scoped lang="less">
     @import "~@/views/index.less";
-.iCountUp {
-    font-size: 4em;
-    margin: 0;
-    color: #4d63bc;
-}
+
 </style>
 <template>
-    <!--<div class="test">-->
-    <Row :gutter="16" style="margin-left:200px">
-    <Col span="8" style="background: red; padding-left: 0px">
-    fadfas
-    </Col>
-    <Col span="8" style="background: yellow">
-    fasfd
-    </Col>
-    <Col span="8" style="background: black">
-    fasd
-    </Col>
-    </Row>
-    <!--</div>-->
-    <!--
     <div class="index">
         <Row class="index-row1" :gutter="16">
-        <Col span="6" style="height: 100%">
-        <Card :bordered="false" style="height: 100%">
-        <div slot="title" style="height: 120px;line-height: 120px">
-            <img src="../images/avator.png" style="height: 60px; width: 60px;display: inline; vertical-align: middle;">
-            <p style="display: inline;margin-left: 50px;font-size: 2em">{{ user.username }}</p>
+        <Col span="6" class="index-row1-col1">
+        <Card class="index-row1-col1-card" :bordered="false">
+        <div slot="title">
+            <img src="../images/avator.png">
+            <p>{{ user.username }}</p>
         </div>
-        <p>最近登录时间: {{ user.lastLoginTime }}</p>
+        <div>最近登录时间: {{ user.lastLoginTime }}</div>
         </Card>
         </Col>
-        <Col span="6" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;" >
+        <Col span="6" class="index-row1-col2">
+        <Card class="index-row1-col2-card" :bordered="false">
         <p slot="title">当前在线人数:</p>
-        <div class="iCountUp">
-            <ICountUp
+            <ICountUp class="index-row1-col2-card-countup"
                 :startVal="startVal"
                 :endVal="endVal"
                 :decimals="decimals"
@@ -44,14 +25,12 @@
                 :options="options"
                 @ready="onReady"
                 />
-        </div>
         </Card>
         </Col>
-        <Col span="6" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;">
+        <Col class="index-row1-col3" span="6">
+        <Card class="index-row1-col3-card" :bordered="false">
         <p slot="title">当前设备数:</p>
-        <div class="iCountUp">
-            <ICountUp
+            <ICountUp class="index-row1-col3-card-countup"
                 :startVal="startVal"
                 :endVal="endVal"
                 :decimals="decimals"
@@ -59,14 +38,12 @@
                 :options="options"
                 @ready="onReady"
                 />
-        </div>
         </Card>
         </Col>
-        <Col span="6" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;">
+        <Col class="index-row1-col4" span="6" style="height: 100%;">
+        <Card class="index-row1-col4-card" :bordered="false" style="height: 100%;">
         <p slot="title">当前服务器数:</p>
-        <div class="iCountUp">
-            <ICountUp
+            <ICountUp class="index-row1-col4-card-countup"
                 :startVal="startVal"
                 :endVal="endVal"
                 :decimals="decimals"
@@ -74,24 +51,22 @@
                 :options="options"
                 @ready="onReady"
                 />
-        </div>
         </Card>
         </Col>
         </Row>
-        <Row :gutter=16 style="height: 65% ;width: 100%;padding-top:5px;margin: 0px;">
-        <Col span="6" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;">
-        <Table ref="selection" :columns="columns4" :data="data1" style="height: 100%;"></Table>
+        <Row class="index-row2" :gutter=16>
+        <Col class="index-row2-col1" span="6">
+        <Card class="index-row2-col1-card" :bordered="false">
+        <Table ref="selection" :columns="columns4" :data="data1"></Table>
         </Card>
         </Col>
-        <Col span="18" style="height: 100%;">
-        <Card :bordered="false" style="height: 100%;">
+        <Col class="index-row2-col2" span="18">
+        <Card class="index-row2-col2-card" :bordered="false">
         <chart></chart>
         </Card>
         </Col>
         </Row>
     </div>
--->
 </template>
 <script>
 import ICountUp from 'vue-countup-v2';

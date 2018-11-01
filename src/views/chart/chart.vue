@@ -1,5 +1,5 @@
 <template>
-    <ve-histogram :data="chartData" height="350px"></ve-histogram>
+    <ve-histogram :data="chartData" height="500px"></ve-histogram>
 </template>
 
 <script>

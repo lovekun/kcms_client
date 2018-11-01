@@ -14,7 +14,7 @@ export default {
         }
     },
     mounted: function() {
-        this.treeData = this.$store.state.treeData; 
+        this.treeData = this.$store.state.treeData;
     }
 }
 </script>

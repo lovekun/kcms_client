@@ -1,26 +1,20 @@
 <style scoped lang="less">
 @import "~@/views/navigate/navigate0.less";
-    /*.menu-uncollapsed {*/
-        /*width: 200px;*/
-    /*}*/
-    /*.menu-uncollapsed .v-leave { width: 50px; }*/
-    .menu-uncollapsed .v-leave-active {  transition: all .3s;}
-    /*.menu-uncollapsed .v-leave-to { width: 100px; opacity: 0;}*/
 </style>
 <template>
-    <div>
+    <div style="display: flex; flex-direction: row">
         <!-- 左侧菜单栏 -->
         <div class="menu" :style="{width: isCollapsed ? '60px':'200px'}">
             <div class="menu-logo">
                 <span>kcms</span>
             </div>
             <transition>
-            <collapse-menu class="menu-uncollapsed" v-show="!isCollapsed"  @menuSelect="menuSelect"></collapse-menu>
+                <collapse-menu class="menu-uncollapsed" v-show="!isCollapsed"  @menuSelect="menuSelect"></collapse-menu>
             </transition>
             <dropdown-menu class="menu-collapsed" v-show="isCollapsed" @dropdownMenuSelect="dropdownMenuSelect" @settingBtnClick="settingBtnClick"></dropdown-menu>
         </div>
+        <div style="width: 100%;">
         <!-- 顶部功能栏 -->
-        <!--<div class="top" :style="{paddingLeft: isCollapsed?'60px':'200px'}">-->
         <div class="top">
             <div style="width: 100%;height: 50px;">
                 <Button :style="{transform: 'rotateZ(' + (isCollapsed ? '-90' : '0') + 'deg)'}" type="text" @click="collapseMenu">
@@ -35,11 +29,9 @@
             <tag></tag>
         </div>
         <!-- 页面主体内容 -->
-        <!-- <div class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"> -->
         <!--<slot class="content" :style="{paddingLeft: isCollapsed ? '60px' : '200px'}"></slot>-->
         <slot></slot>
-        <!-- </div> -->
-        
+        </div>
     </div>
 </template>
 <script>
