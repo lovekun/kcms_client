@@ -3,7 +3,7 @@
 </style>
 <template>
     <div class="tag">
-        <Dropdown class="tag-close" placement="bottom-start" @on-click="close">
+        <Dropdown class="tag-close" placement="bottom-start" @on-click="close" transfer>
         <Button type="text" size="default">
             <Icon type="ios-close-empty" size="30"></Icon>
         </Button>

@@ -5,7 +5,7 @@
 <template>
     <div class="index">
         <Row class="index-row1" :gutter="16">
-        <Col span="6" class="index-row1-col1">
+        <Col class="index-row1-col1" span="6">
         <Card class="index-row1-col1-card" :bordered="false">
         <div slot="title">
             <img src="../images/avator.png">
