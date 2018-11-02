@@ -1,7 +1,5 @@
-<style scoped>
-.tree {
-    
-}
+<style scoped lang="less">
+
 </style>
 <template>
     <div class="tree">
