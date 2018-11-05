@@ -12,16 +12,16 @@
 </template>
 <script>
 export default {
-    name: 'userCenter',
-    computed: {
-        username() {
-            return JSON.parse(this.$cookie.get('user')).username;
-        }
-    },
-    methods: {
-        userMenuSelect(name) {
-            this.$emit('userMenuSelect', name);
-        }
-    }
-}
+	name: "userCenter",
+	computed: {
+		username () {
+			return JSON.parse(this.$cookie.get("user")).username;
+		}
+	},
+	methods: {
+		userMenuSelect (name) {
+			this.$emit("userMenuSelect", name);
+		}
+	}
+};
 </script>

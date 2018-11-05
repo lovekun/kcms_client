@@ -29,7 +29,7 @@ export default {
 		if (payload === "index") {
 			this.state.tagList = ["index"];
 		} else {
-			for(var i = this.state.tagList.length -1; i >= 0 ; i--){
+			for(let i = this.state.tagList.length -1; i >= 0 ; i--){
 				if(this.state.tagList[i] !== payload && this.state.tagList[i] !== "index"){
 					this.state.tagList.splice(i, 1);
 				}

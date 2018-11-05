@@ -34,51 +34,51 @@
 </template>
 <script>
 export default {
-	data() {
+	data () {
 		return {
 			formInline: {
-				username: 'admin',
-				password: 'admin123'
+				username: "admin",
+				password: "admin123"
 			},
 			ruleInline: {
 				username: [{
 					required: true,
-					message: 'Please fill in the user name',
-					trigger: 'blur'
+					message: "Please fill in the user name",
+					trigger: "blur"
 				}],
 				password: [{
-						required: true,
-						message: 'Please fill in the password.',
-						trigger: 'blur'
-					},
-					{
-						type: 'string',
-						min: 6,
-						message: 'The password length cannot be less than 6 bits',
-						trigger: 'blur'
-					}
+					required: true,
+					message: "Please fill in the password.",
+					trigger: "blur"
+				},
+				{
+					type: "string",
+					min: 6,
+					message: "The password length cannot be less than 6 bits",
+					trigger: "blur"
+				}
 				]
 			}
-		}
+		};
 	},
 	methods: {
-		handleSubmit(name) {
-			var vx = this;
+		handleSubmit (name) {
+			let vx = this;
 			this.$refs[name].validate((valid) => {
 				if (valid) {
-					this.$store.dispatch('login', this.formInline)
-						.then(function(value) {
-							vx.$Message.success('Login Success!');
-							vx.$cookie.set("user", vx.$store.state.user)
+					this.$store.dispatch("login", this.formInline)
+						.then(function (value) {
+							vx.$Message.success("Login Success!");
+							vx.$cookie.set("user", vx.$store.state.user);
 							vx.$router.push({
-								name: 'main'
+								name: "main"
 							});
-						}).catch(function(error) {
+						}).catch(function (error) {
 							vx.$Message.error(error);
 						});
 				}
-			})
+			});
 		}
 	}
-}
+};
 </script>

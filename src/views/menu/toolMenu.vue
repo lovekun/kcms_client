@@ -13,30 +13,30 @@
     </div>
 </template>
 <script>
-import fullScreen from '@/views/components/fullscreen.vue';
-import lockScreen from '@/views/components/lockscreen.vue';
+import fullScreen from "@/views/components/fullscreen.vue";
+import lockScreen from "@/views/components/lockscreen.vue";
 
 export default {
-    name: 'toolMenu',
-    components: {
-        fullScreen,
-        lockScreen
-    },
-    data() {
-        return {
-            isFullScreen: false
-        }
-    },
-    methods: {
-        userMenuSelect(name) {
-            this.$emit('userMenuSelect', name);
-        },
-        fullscreenChange (isFullScreen) {
-            // console.log(isFullScreen);
-        },
-        openMessage() {
-            this.$router.push({name: 'message'});
-        }
-    }
-}
+	name: "toolMenu",
+	components: {
+		fullScreen,
+		lockScreen
+	},
+	data () {
+		return {
+			isFullScreen: false
+		};
+	},
+	methods: {
+		userMenuSelect (name) {
+			this.$emit("userMenuSelect", name);
+		},
+		fullscreenChange (isFullScreen) {
+			// console.log(isFullScreen);
+		},
+		openMessage () {
+			this.$router.push({ name: "message" });
+		}
+	}
+};
 </script>

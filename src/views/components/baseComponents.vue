@@ -2,7 +2,7 @@
 	<div>aaa</div>
 </template>
 <script>
-	export default {
-		name: 'baseComponents'
-	}
+export default {
+	  name: "baseComponents"
+};
 </script>

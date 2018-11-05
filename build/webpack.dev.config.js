@@ -73,15 +73,15 @@ module.exports = {
 				loader: "less-loader" // compiles Less to CSS
 			}]
 		},
-		{
-			enforce: "pre",
-			test: /\.(js|vue)$/,
-			exclude: /node_modules/,
-			loader: "eslint-loader",
-            options: {
-                fix: true,
-            }
-		}
+		// {
+		// 	enforce: "pre",
+		// 	test: /\.(js|vue)$/,
+		// 	exclude: /node_modules/,
+		// 	loader: "eslint-loader",
+        //     options: {
+        //         fix: true,
+        //     }
+		// }
 		]
 	},
 	optimization: {

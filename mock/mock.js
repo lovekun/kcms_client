@@ -1,13 +1,13 @@
 import Mock from "mockjs";
 
-var login =  Mock.mock(baseURL + "/login", {
+let login =  Mock.mock(baseURL + "/login", {
 	"name": "lovekun1",
 	"age|1-100": 100,
 	"color": "@color",
 	"data": "success"
 });
 
-var list = Mock.mock(baseURL + "getList", {
+let list = Mock.mock(baseURL + "getList", {
 	"data": [
 		{
 			name: "John Brown",
@@ -32,7 +32,7 @@ var list = Mock.mock(baseURL + "getList", {
 	]
 });
 
-var tree = Mock.mock(baseURL + "/getTree", {
+let tree = Mock.mock(baseURL + "/getTree", {
 	treeData: {
 		title: "root",
 		children: [

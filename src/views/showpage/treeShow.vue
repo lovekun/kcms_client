@@ -26,14 +26,14 @@
     </div>
 </template>
 <script>
-import tree0 from '@/views/tree/custom/tree0.vue';
-import tree1 from '@/views/tree/tree1.vue';
-import card from '@/views/card/card.vue';
+import tree0 from "@/views/tree/custom/tree0.vue";
+import tree1 from "@/views/tree/tree1.vue";
+import card from "@/views/card/card.vue";
 export default {
-    components: {
-        tree0,
-        tree1,
-        card
-    }
-}
+	components: {
+		tree0,
+		tree1,
+		card
+	}
+};
 </script>

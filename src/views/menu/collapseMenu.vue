@@ -26,51 +26,51 @@
 </template>
 <script>
 export default {
-    name: 'collapseMenu',
-    data() {
-        return {
-            menus: [
-                {
-                    name: 'tree',
-                    label: '树形结构'
-                },
-                {
-                    name: 'chart',
-                    label: '图表'
-                },
-                {
-                    name: 'dragComponent',
-                    label: '可拖动组件'
-                },
-                {
-                    name: 'markdown',
-                    label: 'markdown编辑器'
-                }
-            ],
-            tables: [
-                {
-                    name: 'editableList',
-                    label: '可编辑表格'
-                },
-                {
-                    name: 'horizontalScrollList',
-                    label: '水平滑动表格'
-                },
-                {
-                    name: 'exportableList',
-                    label: '可导出表格'
-                },
-                {
-                    name: 'multiShowList',
-                    label: '多种显示方式展示'
-                }
-            ]
-        }
-    },
-    methods: {
-        menuSelect(name) {
-            this.$emit('menuSelect', name);
-        }
-    }
-}
+	name: "collapseMenu",
+	data () {
+		return {
+			menus: [
+				{
+					name: "tree",
+					label: "树形结构"
+				},
+				{
+					name: "chart",
+					label: "图表"
+				},
+				{
+					name: "dragComponent",
+					label: "可拖动组件"
+				},
+				{
+					name: "markdown",
+					label: "markdown编辑器"
+				}
+			],
+			tables: [
+				{
+					name: "editableList",
+					label: "可编辑表格"
+				},
+				{
+					name: "horizontalScrollList",
+					label: "水平滑动表格"
+				},
+				{
+					name: "exportableList",
+					label: "可导出表格"
+				},
+				{
+					name: "multiShowList",
+					label: "多种显示方式展示"
+				}
+			]
+		};
+	},
+	methods: {
+		menuSelect (name) {
+			this.$emit("menuSelect", name);
+		}
+	}
+};
 </script>

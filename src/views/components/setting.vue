@@ -20,24 +20,21 @@
     
 </template>
 <script>
-    import global_ from '@/util/global.vue';
-	export default {
-		data () {
-            return {
-                vertical: window.localStorage.getItem('mainPageType')
-            }
-        },
-        methods: {
-        	changeMenu: function(data) {
-                if(window.localStorage) {  
-                    // localStorge可用
-                    var localStorage = window.localStorage;  
-                    // 存储  
-                    localStorage.setItem("mainPageType",data); 
-                }else {
-                    
-                }
+export default {
+	data () {
+    		return {
+    			vertical: window.localStorage.getItem("mainPageType")
+    		};
+    	},
+    	methods: {
+        	changeMenu: function (data) {
+    			if (window.localStorage) {
+    				// localStorge可用
+    				var localStorage = window.localStorage;
+    				// 存储
+    				localStorage.setItem("mainPageType", data);
+    			}
         	}
-        }
-	}
+    	}
+};
 </script>

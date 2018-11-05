@@ -35,42 +35,42 @@
 </template>
 <script>
 export default {
-    name: 'tag',
-    computed: {
-        tagList() {
-            return this.$store.state.tagList;
-        }
-    },
-    methods: {
-        handleClose(name) {
-            this.$store.commit('removeTagList', name);
-            this.$router.push({name: this.$store.state.tagList[this.$store.state.tagList.length - 1]});
-        },
-        tagClick(name) {
-            this.$router.push({
-                name: name
-            });
-        },
-        closeOthers() {
-            this.$store.commit('removeOtherTagList', this.$router.currentRoute.name);
-        },
-        closeAll() {
-            this.$store.commit('removeAllTagList');
-            this.$router.push({
-                name: 'index'
-            });
-        },
-        close(name) {
-            console.log(name);
-            if(name == 'others') {
-                this.$store.commit('removeOtherTagList', this.$router.currentRoute.name);
-            } else if(name == 'all') {
-                this.$store.commit('removeAllTagList');
-                this.$router.push({
-                    name: 'index'
-                });
-            }
-        }
-    }
-}
+	name: "tag",
+	computed: {
+		tagList () {
+			return this.$store.state.tagList;
+		}
+	},
+	methods: {
+		handleClose (name) {
+			this.$store.commit("removeTagList", name);
+			this.$router.push({ name: this.$store.state.tagList[this.$store.state.tagList.length - 1] });
+		},
+		tagClick (name) {
+			this.$router.push({
+				name: name
+			});
+		},
+		closeOthers () {
+			this.$store.commit("removeOtherTagList", this.$router.currentRoute.name);
+		},
+		closeAll () {
+			this.$store.commit("removeAllTagList");
+			this.$router.push({
+				name: "index"
+			});
+		},
+		close (name) {
+			console.log(name);
+			if (name === "others") {
+				this.$store.commit("removeOtherTagList", this.$router.currentRoute.name);
+			} else if (name === "all") {
+				this.$store.commit("removeAllTagList");
+				this.$router.push({
+					name: "index"
+				});
+			}
+		}
+	}
+};
 </script>

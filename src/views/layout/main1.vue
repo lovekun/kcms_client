@@ -22,28 +22,28 @@
 </template>
 
 <script>
-	import topMenu from '@/views/menu/topMenu.vue';
-    import leftMenu from '@/views/menu/leftMenu.vue';
-    export default {
-        components: {
-            topMenu,
-            leftMenu,
-        },
-        data () {
-            return {
-                
-            };
-        },
-        computed: {
-            
-        },
-        methods: {
-            
-        },
-        ready: function() {
-            
-        },
-        mounted: function() {
-        }
-    }
+import topMenu from "@/views/menu/topMenu.vue";
+import leftMenu from "@/views/menu/leftMenu.vue";
+export default {
+	components: {
+	    topMenu,
+	    leftMenu
+	},
+	data () {
+	    return {
+
+	    };
+  	},
+	computed: {
+
+	},
+	methods: {
+
+	},
+	ready: function () {
+
+	},
+	mounted: function () {
+	}
+};
 </script>

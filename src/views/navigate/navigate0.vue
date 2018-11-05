@@ -35,77 +35,77 @@
     </div>
 </template>
 <script>
-import collapseMenu from '@/views/menu/collapseMenu.vue';
-import dropdownMenu from '@/views/menu/dropdownMenu.vue';
-import userCenter from '@/views/menu/userCenter';
-import breadcrumb from '@/views/breadcrumb/breadcrumb.vue';
-import toolMenu from '@/views/menu/toolMenu.vue';
-import tag from '@/views/tag/tag.vue';
+import collapseMenu from "@/views/menu/collapseMenu.vue";
+import dropdownMenu from "@/views/menu/dropdownMenu.vue";
+import userCenter from "@/views/menu/userCenter";
+import breadcrumb from "@/views/breadcrumb/breadcrumb.vue";
+import toolMenu from "@/views/menu/toolMenu.vue";
+import tag from "@/views/tag/tag.vue";
 
 export default {
-    name: 'navigate0',
-    components: {
-        collapseMenu,
-        dropdownMenu,
-        userCenter,
-        breadcrumb,
-        toolMenu,
-        tag
-    },
-    props: {
-    },
-    data() {
-        return {
-            toPath: '#/main/index'
-        }
-    },
-    computed: {
-        currentPath() {
-            return this.$store.state.currentPath;
-        },
-        isCollapsed() {
-            return this.$store.state.isCollapsed;
-        }
-    },
-    methods: {
-        collapseMenu() {
-            // this.isCollapsed = !this.isCollapsed;
-            this.$store.commit('toggleMenu');
-        },
-        menuSelect(name) {
-            if(this.$store.state.tagList.indexOf(name) === -1) {
-                this.$store.commit('updateTagList', name);
-            }
-            this.$router.push({name: name});
-        },
-        userMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
-        },
-        dropdownMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
-        },
-        settingBtnClick() {
-            if(this.$store.state.tagList.indexOf('setting') === -1) {
-                this.$store.commit('updateTagList', 'setting');
-            }
-            this.$router.push({name: 'setting'});
-        }
-    },
-    mounted: function () {
-    }
-}
+	name: "navigate0",
+	components: {
+		collapseMenu,
+		dropdownMenu,
+		userCenter,
+		breadcrumb,
+		toolMenu,
+		tag
+	},
+	props: {
+	},
+	data () {
+		return {
+			toPath: "#/main/index"
+		};
+	},
+	computed: {
+		currentPath () {
+			return this.$store.state.currentPath;
+		},
+		isCollapsed () {
+			return this.$store.state.isCollapsed;
+		}
+	},
+	methods: {
+		collapseMenu () {
+			// this.isCollapsed = !this.isCollapsed;
+			this.$store.commit("toggleMenu");
+		},
+		menuSelect (name) {
+			if (this.$store.state.tagList.indexOf(name) === -1) {
+				this.$store.commit("updateTagList", name);
+			}
+			this.$router.push({ name: name });
+		},
+		userMenuSelect (name) {
+			if (name === "logout") {
+				this.$router.push({ name: "login" });
+			} else {
+				if (this.$store.state.tagList.indexOf(name) === -1) {
+					this.$store.commit("updateTagList", name);
+				}
+				this.$router.push({ name: name });
+			}
+		},
+		dropdownMenuSelect (name) {
+			if (name === "logout") {
+				this.$router.push({ name: "login" });
+			} else {
+				if (this.$store.state.tagList.indexOf(name) === -1) {
+					this.$store.commit("updateTagList", name);
+				}
+				this.$router.push({ name: name });
+			}
+		},
+		settingBtnClick () {
+			if (this.$store.state.tagList.indexOf("setting") === -1) {
+				this.$store.commit("updateTagList", "setting");
+			}
+			this.$router.push({ name: "setting" });
+		}
+	},
+	mounted: function () {
+	}
+};
 </script>

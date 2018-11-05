@@ -27,24 +27,24 @@
 	    </Menu>
 </template>
 <script>
-	export default {
-		name: 'topMenu',
-		methods: {
-            menuSelect(name) {
-                if (name == '1') {
-                    this.$router.push({
-                        name: 'list'
-                    });
-                } else if (name == '2') {
-                    this.$router.push({
-                        name: 'infos'
-                    });
-                } else if (name == '3') {
-                    this.$router.push({
-                        name: 'setting'
-                    });
-                }
-            }
-        }
+export default {
+	  name: "topMenu",
+	  methods: {
+	    menuSelect (name) {
+	      if (name === "1") {
+	        this.$router.push({
+	          name: "list"
+	        });
+	      } else if (name === "2") {
+	        this.$router.push({
+	          name: "infos"
+	        });
+	      } else if (name === "3") {
+	        this.$router.push({
+	          name: "setting"
+	        });
+	      }
+	    }
 	}
+};
 </script>

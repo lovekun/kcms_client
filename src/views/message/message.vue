@@ -39,28 +39,28 @@
 
 <script>
 export default {
-    data () {
-        return {
-            list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-            invokeIdCnt: 0
-        }
-    },
-    methods: {
-        handleReachBottom () {
-            return new Promise(resolve => {
-                setTimeout(() => {
-                    const last = this.list1[this.list1.length - 1];
-                    for (let i = 1; i < 11; i++) {
-                        this.list1.push(last + i);
-                    }
-                    resolve();
-                }, 2000);
-            });
-        }
+	data () {
+		return {
+			list1: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+			invokeIdCnt: 0
+		};
+	},
+	methods: {
+		handleReachBottom () {
+			return new Promise(resolve => {
+				setTimeout(() => {
+					const last = this.list1[this.list1.length - 1];
+					for (let i = 1; i < 11; i++) {
+						this.list1.push(last + i);
+					}
+					resolve();
+				}, 2000);
+			});
+		}
 
-    },
-    mounted: function() {
-        /*
+	},
+	mounted: function () {
+		/*
         var ws = new WebSocket('ws://localhost:61614/stomp', 'stomp');
         switch (ws.readyState) {
             case WebSocket.CONNECTING:
@@ -90,7 +90,7 @@ export default {
             ws.close();
         };
          */
-}
+	}
 
-}
+};
 </script>

@@ -30,64 +30,60 @@
 
 <script>
 export default {
-    name: 'toolbar',
-    data () {
-        return {
-            modal1: false,
-            data1: [
-                    {
-                        title: 'parent 1',
-                        expand: true,
-                        children: [
-                            {
-                                title: 'parent 1-1',
-                                expand: true,
-                                children: [
-                                    {
-                                        title: 'leaf 1-1-1'
-                                    },
-                                    {
-                                        title: 'leaf 1-1-2'
-                                    }
-                                ]
-                            },
-                            {
-                                title: 'parent 1-2',
-                                expand: true,
-                                children: [
-                                    {
-                                        title: 'leaf 1-2-1'
-                                    },
-                                    {
-                                        title: 'leaf 1-2-1'
-                                    }
-                                ]
-                            }
-                        ]
-                    }
-                ]
-        }
-    },
-    computed: {
-        
-    },
-    methods: {
-        itemSelect(name) {
-            this.$Message.success(name);
-            if (name == "1") {
-                this.modal1 = true;
-            } else if (name == "2") {
-                    
-            } else if (name == "3") {
-                    
-            }
-        },
-        ok () {
-            this.$Message.info('Clicked ok');
-        },
-        cancel () {
-            this.$Message.info('Clicked cancel');
-        }
-    }
-}
+	name: "toolbar",
+	data () {
+		return {
+			modal1: false,
+			data1: [
+				{
+					title: "parent 1",
+					expand: true,
+					children: [
+						{
+							title: "parent 1-1",
+							expand: true,
+							children: [
+								{
+									title: "leaf 1-1-1"
+								},
+								{
+									title: "leaf 1-1-2"
+								}
+							]
+						},
+						{
+							title: "parent 1-2",
+							expand: true,
+							children: [
+								{
+									title: "leaf 1-2-1"
+								},
+								{
+									title: "leaf 1-2-1"
+								}
+							]
+						}
+					]
+				}
+			]
+		};
+	},
+	computed: {
+
+	},
+	methods: {
+		itemSelect (name) {
+			this.$Message.success(name);
+			if (name == "1") {
+				this.modal1 = true;
+			}
+		},
+		ok () {
+			this.$Message.info("Clicked ok");
+		},
+		cancel () {
+			this.$Message.info("Clicked cancel");
+		}
+	}
+};
 </script>

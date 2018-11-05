@@ -17,7 +17,6 @@ export default {
 				username: payload.username,
 				password: payload.password
 			}).then(function(response) {
-				console.log(response);
 				if (response.data.data == "success") {
 					store.commit("updateUserInfo", user);
 					resolve("success");

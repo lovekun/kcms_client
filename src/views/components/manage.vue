@@ -1,3 +1,3 @@
 <template>
-    <div>manage page</div>
-</template>
+	<div>manage page</div>
+</template>;

@@ -4,17 +4,17 @@
     </Card>
 </template>
 <script>
-import SimpleMDE from 'simplemde';
-import './simplemde.min.css';
+import SimpleMDE from "simplemde";
+import "./simplemde.min.css";
 
 export default {
-    name: 'markdown',
-    mounted() {
-        new SimpleMDE({
-            element: document.getElementById("md")
-            // toolbar: ['bold', 'italic', 'strikethrough', 'heading', 'heading-smaller', 'heading-bigger', 'heading-1', 'heading-2', 'heading-3', '|', 'code', 'quote', 'unordered-list', 'clean-block', '|', 'link', 'image', 'table', 'horizontal-rule', '|', 'preview', 'guide']
+	name: "markdown",
+	mounted () {
+		new SimpleMDE({
+			element: document.getElementById("md")
+			// toolbar: ['bold', 'italic', 'strikethrough', 'heading', 'heading-smaller', 'heading-bigger', 'heading-1', 'heading-2', 'heading-3', '|', 'code', 'quote', 'unordered-list', 'clean-block', '|', 'link', 'image', 'table', 'horizontal-rule', '|', 'preview', 'guide']
 
-        }).value("test value");
-    }
-}
+		}).value("test value");
+	}
+};
 </script>

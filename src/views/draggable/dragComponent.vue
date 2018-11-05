@@ -23,44 +23,42 @@
 </template>
 
 <script>
-import draggable from 'vuedraggable';
+import draggable from "vuedraggable";
 
 export default {
-    name: 'dragComponent',
-    components: {
-        draggable,
-    },
-    data() {
-        return {
-            list: [{
-                name: "John"
-            }, {
-                name: "Joao"
-            }, {
-                name: "Jean"
-            }],
-            list2: [{
-                name: "Juan"
-            }, {
-                name: "Edgard"
-            }, {
-                name: "Johnson"
-            }]
-        }
-
-    },
-    methods: {
-        add: function() {
-            this.list.push({
-                name: 'Juan'
-            });
-        },
-        replace: function() {
-            this.list = [{
-                name: 'Edgard'
-            }]
-        }
-    }
-}
-
+	name: "dragComponent",
+	components: {
+		draggable
+	},
+	data () {
+		return {
+			list: [{
+				name: "John"
+			}, {
+				name: "Joao"
+			}, {
+				name: "Jean"
+			}],
+			list2: [{
+				name: "Juan"
+			}, {
+				name: "Edgard"
+			}, {
+				name: "Johnson"
+			}]
+		};
+	},
+	methods: {
+		add: function () {
+			this.list.push({
+				name: "Juan"
+			});
+		},
+		replace: function () {
+			this.list = [{
+				name: "Edgard"
+			}];
+		}
+	}
+};
 </script>

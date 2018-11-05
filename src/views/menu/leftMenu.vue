@@ -31,79 +31,79 @@
     </Layout>
 </template>
 <script>
-	import tree from '@/views/tree/tree1.vue';
-    import scroll from '@/views/list/scroll.vue';
-    import baseComponents from '@/views/components/baseComponents.vue';
-    export default {
-    	name: 'leftMenu',
+import tree from "@/views/tree/tree1.vue";
+import scroll from "@/views/list/scroll.vue";
+import baseComponents from "@/views/components/baseComponents.vue";
+export default {
+    	name: "leftMenu",
     	components: {
-            tree,
-            scroll,
-            baseComponents
-        },
+	    tree,
+	    scroll,
+	    baseComponents
+	},
     	data () {
-            return {
-                isCollapsed: true,
-                isvisible: true,
-                isOpen: true,
-                isOpen1: true,
-                isOpen2: true
-            };
-        },
-        computed: {
-            menuitemClasses: function () {
-                return [
-                    'menu-item',
-                    this.isCollapsed ? 'collapsed-menu' : ''
-                ]
-            },
-            toolbarClasses: function () {
-                return [
-                    'toolbar',
-                    this.isOpen ? 'collapsed-toolbar' : ''
-                ]
-            },
-            toolbarClasses1: function () {
-                return [
-                    'toolbar1',
-                    this.isOpen1 ? 'collapsed-toolbar1' : ''
-                ]
-            },
-            toolbarClasses2: function () {
-                return [
-                    'toolbar1',
-                    this.isOpen2 ? 'collapsed-toolbar2' : ''
-                ]
-            }
-        },
-        methods: {
-            menuSelect(name) {
-                if (name == "1-1") {
-                    if(!this.isOpen1){
-                        this.isOpen1 = !this.isOpen1;
-                    }
-                    if(!this.isOpen2){
-                        this.isOpen2 = !this.isOpen2;
-                    }
-                    this.isOpen = !this.isOpen;
-                } else if (name == "1-2") {
-                    if(!this.isOpen){
-                        this.isOpen = !this.isOpen;
-                    }
-                    if(!this.isOpen2){
-                        this.isOpen2 = !this.isOpen2;
-                    }
-                    this.isOpen1 = !this.isOpen1;
-                } else if (name == "1-3") {
-                    if(!this.isOpen){
-                        this.isOpen = !this.isOpen;
-                    }
-                    if(!this.isOpen1){
-                        this.isOpen1 = !this.isOpen1;
-                    }
-                    this.isOpen2 = !this.isOpen2;
-                }
-            }
-        }
-    }
+	    return {
+	      isCollapsed: true,
+	      isvisible: true,
+	      isOpen: true,
+	      isOpen1: true,
+	      isOpen2: true
+	    };
+	},
+	computed: {
+	    menuitemClasses: function () {
+	      return [
+	        "menu-item",
+	        this.isCollapsed ? "collapsed-menu" : ""
+	      ];
+		},
+	    toolbarClasses: function () {
+	      return [
+	        "toolbar",
+	        this.isOpen ? "collapsed-toolbar" : ""
+	      ];
+		},
+	    toolbarClasses1: function () {
+	      return [
+	        "toolbar1",
+	        this.isOpen1 ? "collapsed-toolbar1" : ""
+	      ];
+		},
+	    toolbarClasses2: function () {
+	      return [
+	        "toolbar1",
+	        this.isOpen2 ? "collapsed-toolbar2" : ""
+	      ];
+		}
+	},
+	methods: {
+	    menuSelect (name) {
+	      if (name === "1-1") {
+	        if (!this.isOpen1) {
+	          this.isOpen1 = !this.isOpen1;
+	        }
+	        if (!this.isOpen2) {
+	          this.isOpen2 = !this.isOpen2;
+	        }
+	        this.isOpen = !this.isOpen;
+	      } else if (name === "1-2") {
+	        if (!this.isOpen) {
+	          this.isOpen = !this.isOpen;
+	        }
+	        if (!this.isOpen2) {
+	          this.isOpen2 = !this.isOpen2;
+	        }
+	        this.isOpen1 = !this.isOpen1;
+	      } else if (name === "1-3") {
+	        if (!this.isOpen) {
+	          this.isOpen = !this.isOpen;
+	        }
+	        if (!this.isOpen1) {
+	          this.isOpen1 = !this.isOpen1;
+	        }
+	        this.isOpen2 = !this.isOpen2;
+	      }
+	    }
+	}
+};
 </script>

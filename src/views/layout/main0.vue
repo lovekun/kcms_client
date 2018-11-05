@@ -32,106 +32,106 @@
     </div>
 </template>
 <script>
-    import collapseMenu from '@/views/menu/collapseMenu.vue';
-    import dropdownMenu from '@/views/menu/dropdownMenu.vue';
-    import userCenter from '@/views/menu/userCenter';
-    import breadcrumb from '@/views/breadcrumb/breadcrumb.vue';
-    import toolMenu from '@/views/menu/toolMenu.vue';
-    import tag from '@/views/tag/tag.vue';
+import collapseMenu from "@/views/menu/collapseMenu.vue";
+import dropdownMenu from "@/views/menu/dropdownMenu.vue";
+import userCenter from "@/views/menu/userCenter";
+import breadcrumb from "@/views/breadcrumb/breadcrumb.vue";
+import toolMenu from "@/views/menu/toolMenu.vue";
+import tag from "@/views/tag/tag.vue";
 export default {
-    components: {
-        collapseMenu,
-        dropdownMenu,
-        userCenter,
-        breadcrumb,
-        toolMenu,
-        tag
-    },
-    data () {
-        return {
-            toPath: '#/main/index'
-        }
-    },
-    computed: {
-        tagList() {
-            return this.$store.state.tagList;
-        },
-        isCollapsed() {
-            return this.$store.state.isCollapsed;
-        },
-        currentPath() {
-            return this.$store.state.currentPath;
-        }
-    },
-    methods: {
-        handleClose(name) {
-            this.$store.commit('removeTagList', name);
-            this.$router.push({name: this.$store.state.tagList[this.$store.state.tagList.length - 1]});
-        },
-        tagClick(name) {
-            this.$router.push({
-                name: name
-            });
-        },
-        closeOthers() {
-            this.$store.commit('removeOtherTagList', this.$router.currentRoute.name);
-        },
-        closeAll() {
-            this.$store.commit('removeAllTagList');
-            this.$router.push({
-                name: 'index'
-            });
-        },
-        collapseMenu() {
-            this.$store.commit('toggleMenu');
-        },
-        menuSelect(name) {
-            if(this.$store.state.tagList.indexOf(name) === -1) {
-                this.$store.commit('updateTagList', name);
-            }
-            this.$router.push({name: name});
-        },
-        userMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
-        },
-        dropdownMenuSelect(name) {
-            if(name === 'logout') {
-                this.$router.push({name: 'login'});
-            } else {
-                if(this.$store.state.tagList.indexOf(name) === -1) {
-                    this.$store.commit('updateTagList', name);
-                }
-                this.$router.push({name: name});
-            }
-        },
-        settingBtnClick() {
-            if(this.$store.state.tagList.indexOf('setting') === -1) {
-                this.$store.commit('updateTagList', 'setting');
-            }
-            this.$router.push({name: 'setting'});
-        }
-    },
-    mounted: function () {
-        if(this.$store.state.tagList.indexOf('index') === -1) {
-            this.$store.commit('updateTagList', 'index');
-        }
-        this.$router.push({
-            name: 'index'
-        });
-    },
-    watch: {
-        '$route'(to) {
-            this.$store.commit('setCurrentPath', to.name);
-            this.toPath = to.path;
-        }
-    }
-}
+	components: {
+		collapseMenu,
+		dropdownMenu,
+		userCenter,
+		breadcrumb,
+		toolMenu,
+		tag
+	},
+	data () {
+		return {
+			toPath: "#/main/index"
+		};
+	},
+	computed: {
+		tagList () {
+			return this.$store.state.tagList;
+		},
+		isCollapsed () {
+			return this.$store.state.isCollapsed;
+		},
+		currentPath () {
+			return this.$store.state.currentPath;
+		}
+	},
+	methods: {
+		handleClose (name) {
+			this.$store.commit("removeTagList", name);
+			this.$router.push({ name: this.$store.state.tagList[this.$store.state.tagList.length - 1] });
+		},
+		tagClick (name) {
+			this.$router.push({
+				name: name
+			});
+		},
+		closeOthers () {
+			this.$store.commit("removeOtherTagList", this.$router.currentRoute.name);
+		},
+		closeAll () {
+			this.$store.commit("removeAllTagList");
+			this.$router.push({
+				name: "index"
+			});
+		},
+		collapseMenu () {
+			this.$store.commit("toggleMenu");
+		},
+		menuSelect (name) {
+			if (this.$store.state.tagList.indexOf(name) === -1) {
+				this.$store.commit("updateTagList", name);
+			}
+			this.$router.push({ name: name });
+		},
+		userMenuSelect (name) {
+			if (name === "logout") {
+				this.$router.push({ name: "login" });
+			} else {
+				if (this.$store.state.tagList.indexOf(name) === -1) {
+					this.$store.commit("updateTagList", name);
+				}
+				this.$router.push({ name: name });
+			}
+		},
+		dropdownMenuSelect (name) {
+			if (name === "logout") {
+				this.$router.push({ name: "login" });
+			} else {
+				if (this.$store.state.tagList.indexOf(name) === -1) {
+					this.$store.commit("updateTagList", name);
+				}
+				this.$router.push({ name: name });
+			}
+		},
+		settingBtnClick () {
+			if (this.$store.state.tagList.indexOf("setting") === -1) {
+				this.$store.commit("updateTagList", "setting");
+			}
+			this.$router.push({ name: "setting" });
+		}
+	},
+	mounted: function () {
+		if (this.$store.state.tagList.indexOf("index") === -1) {
+			this.$store.commit("updateTagList", "index");
+		}
+		this.$router.push({
+			name: "index"
+		});
+	},
+	watch: {
+		"$route" (to) {
+			this.$store.commit("setCurrentPath", to.name);
+			this.toPath = to.path;
+		}
+	}
+};
 </script>
 

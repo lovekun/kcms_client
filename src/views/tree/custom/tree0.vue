@@ -5,16 +5,16 @@
 </template>
 
 <script>
-import treenode from './treenode.vue';
+import treenode from "./treenode.vue";
 export default {
-    components: {treenode},
-    data() {
-        return {
-            treeData: {}
-        }
-    },
-    mounted: function() {
-        this.treeData = this.$store.state.treeData;
-    }
-}
+	components: { treenode },
+	data () {
+		return {
+			treeData: {}
+		};
+	},
+	mounted: function () {
+		this.treeData = this.$store.state.treeData;
+	}
+};
 </script>

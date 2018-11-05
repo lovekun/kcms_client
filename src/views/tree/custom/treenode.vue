@@ -53,83 +53,81 @@
     </div>
 </template>
 <script>
-import render from './render.js';
+import render from "./render.js";
 export default {
-    name: 'treenode',
-    components: {render},
-    data() {
-        return {
-            isfold: false,
-            iconType: 'chevron-right',
-            showMenu: false,
-            editModal: false,
-            addModal: false,
-            editVal: '',
-            addVal: ''
-        }
-    },
-    props: {
-        treedata: {
-            type: Object
-        },
-        depth: {
-            type: Number
-        }
-    },
-    computed: {
-    },
-    methods: {
-        toggle() {
-            this.isfold = !this.isfold;
-            if(this.isfold) {
-                this.iconType = 'chevron-down';
-            } else {
-                this.iconType = 'chevron-right';
-            }
-        },
-        openOperation() {
-            this.showMenu = !this.showMenu;
-        },
-        toggleOperation(name) {
-            if (name == 'add') {
-                this.addModal = true;
+	name: "treenode",
+	components: { render },
+	data () {
+		return {
+			isfold: false,
+			iconType: "chevron-right",
+			showMenu: false,
+			editModal: false,
+			addModal: false,
+			editVal: "",
+			addVal: ""
+		};
+	},
+	props: {
+		treedata: {
+			type: Object
+		},
+		depth: {
+			type: Number
+		}
+	},
+	computed: {
+	},
+	methods: {
+		toggle () {
+			this.isfold = !this.isfold;
+			if (this.isfold) {
+				this.iconType = "chevron-down";
+			} else {
+				this.iconType = "chevron-right";
+			}
+		},
+		openOperation () {
+			this.showMenu = !this.showMenu;
+		},
+		toggleOperation (name) {
+			if (name === "add") {
+				this.addModal = true;
+			} else if (name === "edit") {
+				this.editModal = true;
+			} else if (name === "delete") {
+				this.$emit("deleteData", this.treedata.title);
+			}
+		},
+		deleteData (delData) {
+			var vx = this;
+			this.treedata.children.forEach((item, index) => {
+				if (item.title === delData) {
+					console.log(vx.treedata.children);
+					vx.treedata.children.splice(index, 1);
+				}
+			});
+		},
+		editOk () {
+			this.treedata.title = this.editVal;
+		},
+		editCancel () {
 
-            } else if (name == 'edit') {
-                this.editModal = true;
-            } else if (name == 'delete') {
-                this.$emit('deleteData', this.treedata.title);
-            }
-        },
-        deleteData(delData) {
-            var vx = this;
-            this.treedata.children.forEach((item, index) => {
-                if(item.title == delData) {
-                    console.log(vx.treedata.children);
-                    vx.treedata.children.splice(index, 1);
-                }
-            })
+		},
+		addOk () {
+			if (this.treedata.children) {
+				this.treedata.children.push({ "title": this.addVal });
+			} else {
+				this.treedata.children = [];
+				this.treedata.children.push({ "title": this.addVal });
+			}
+		},
+		addCancel () {
 
-        },
-        editOk() {
-            this.treedata.title = this.editVal;
-        },
-        editCancel() {
+		}
+	},
+	mounted: function () {
 
-        },
-        addOk() {
-            if(this.treedata.children) {
-                this.treedata.children.push({'title': this.addVal});
-            } else {
-                this.treedata.children = [];
-                this.treedata.children.push({'title': this.addVal});
-            }
-        },
-        addCancel() {
-
-        }
-    },
-    mounted: function() {
-
-    }
-}
+	}
+};
 </script>

@@ -5,14 +5,14 @@
 </template>
 <script>
 export default {
-    name: 'breadcrumb',
-    props: {
-        currentPath: {
-            type: Array
-        },
-        toPath: {
-            type: String
-        }
-    }
-}
+	name: "breadcrumb",
+	props: {
+		currentPath: {
+			type: Array
+		},
+		toPath: {
+			type: String
+		}
+	}
+};
 </script>

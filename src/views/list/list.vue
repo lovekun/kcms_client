@@ -31,61 +31,61 @@
 </template>
 <script>
 export default {
-    data () {
-        return {
-            checkableList: [
-            {
-                value: '1',
-                label: '可勾选'
-            },
-            {
-                value: '0',
-                label: '不可勾选'
-            }
-            ],
-            stripeableList: [
-            {
-                value: '1',
-                label: '显示斑马纹'
-            },
-            {
-                value: '0',
-                label: '不显示斑马纹'
-            }
-            ],
-            columns: [],
-            data: [],
-            formInline: {
-                name: ''
-            },
-            ruleInline: {
-                name: [
-                { required: true, message: 'Please fill in the user name', trigger: 'blur' }
-                ]
-            }
-        }
-    },
-    methods: {
-        handleSelectAll (status) {
-            this.$refs.selection.selectAll(status);
-        },
-        getList: function() {
-            this.$store.dispatch('getList');
-            this.columns = this.$store.state.columnName;
-            this.data = this.$store.state.listData;
-        },
-        handleSubmit(name) {
-            this.$refs[name].validate((valid) => {
-                if (valid) {
-                    this.$Message.success('Success!');
-                } else {
-                    this.$Message.error('Fail!');
-                }
-            })
-        }
-    },
-    mounted: function() {
-        this.getList();
-    }
-}
+	data () {
+		return {
+			checkableList: [
+				{
+					value: "1",
+					label: "可勾选"
+				},
+				{
+					value: "0",
+					label: "不可勾选"
+				}
+			],
+			stripeableList: [
+				{
+					value: "1",
+					label: "显示斑马纹"
+				},
+				{
+					value: "0",
+					label: "不显示斑马纹"
+				}
+			],
+			columns: [],
+			data: [],
+			formInline: {
+				name: ""
+			},
+			ruleInline: {
+				name: [
+					{ required: true, message: "Please fill in the user name", trigger: "blur" }
+				]
+			}
+		};
+	},
+	methods: {
+		handleSelectAll (status) {
+			this.$refs.selection.selectAll(status);
+		},
+		getList: function () {
+			this.$store.dispatch("getList");
+			this.columns = this.$store.state.columnName;
+			this.data = this.$store.state.listData;
+		},
+		handleSubmit (name) {
+			this.$refs[name].validate((valid) => {
+				if (valid) {
+					this.$Message.success("Success!");
+				} else {
+					this.$Message.error("Fail!");
+				}
+			});
+		}
+	},
+	mounted: function () {
+		this.getList();
+	}
+};
 </script>
