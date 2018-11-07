@@ -7,8 +7,7 @@ import {login, list} from "@/../mock/mock.js";
 
 export default {
 	login(context, payload) {
-		var vx = this;
-		var user = {
+		let user = {
 			"username": payload.username,
 			"password": payload.password
 		};
