@@ -11,7 +11,7 @@ module.exports = {
 	devtool: "#source-map",
 	mode: "development",
 	devServer: {
-	    contentBase: [path.join(__dirname, "../dist"), path.join(__dirname, "../src/data")],
+	  contentBase: [path.join(__dirname, "../dist"), path.join(__dirname, "../src/data")],
 		port: 8000,
 		inline: true,
 		hot: true,
@@ -78,9 +78,9 @@ module.exports = {
 		// 	test: /\.(js|vue)$/,
 		// 	exclude: /node_modules/,
 		// 	loader: "eslint-loader",
-        //     options: {
-        //         fix: true,
-        //     }
+			//     options: {
+			//         fix: true,
+			//     }
 		// }
 		]
 	},
@@ -124,7 +124,8 @@ module.exports = {
 			// HAS_SERVER: true,
 			// TODO: 根据 process.env 定制不同环境下的地址
 			// 配置Axios请求的基准路径
-			baseURL: JSON.stringify("http://localhost:8000/")
+			// baseURL: JSON.stringify("http://localhost:8000/")
+      baseURL: JSON.stringify("http://localhost:8083/")
 
 		})
 	],
