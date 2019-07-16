@@ -4,6 +4,8 @@ import {
 } from "./router/router";
 import iView from "iview";
 import "../node_modules/iview/dist/styles/iview.css";
+import ElementUI from 'element-ui';
+import 'element-ui/lib/theme-chalk/index.css';
 import "@/util/date.js";
 import {
 	store
@@ -12,6 +14,7 @@ import * as Cookies from "js-cookie";
 import "./message/stomp.js";
 
 Vue.use(iView);
+Vue.use(ElementUI);
 Vue.prototype.$cookie = Cookies;
 new Vue({
 	router: router,

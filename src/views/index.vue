@@ -1,76 +1,96 @@
 <style scoped lang="less">
-    @import "~@/views/index.less";
-
+    /*@import "~@/views/index.less";*/
+    .el-row {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .el-col {
+      border-radius: 4px;
+    }
+    .bg-purple-dark {
+      background: #99a9bf;
+    }
+    .bg-purple {
+      background: #d3dce6;
+    }
+    .bg-purple-light {
+      background: #e5e9f2;
+    }
+    .grid-content {
+      border-radius: 4px;
+      min-height: 36px;
+    }
+    .row-bg {
+      padding: 10px 0;
+      background-color: #f9fafc;
+    }
 </style>
 <template>
-    <div class="index">
-        <Row class="index-row1" :gutter="16">
-        <Col class="index-row1-col1" span="6">
+  <div class="index" style="">
+    <el-row>
+      <el-col :span="6">
         <Card class="index-row1-col1-card" :bordered="false">
         <div slot="title">
-            <img src="../images/avator.png">
-            <p>{{ user.username }}</p>
+        <img src="../images/avator.png">
+        <p>{{ user.username }}</p>
         </div>
         <div>最近登录时间: {{ user.lastLoginTime }}</div>
         </Card>
-        </Col>
-        <Col span="6" class="index-row1-col2">
+      </el-col>
+      <el-col :span="6">
         <Card class="index-row1-col2-card" :bordered="false">
         <p slot="title">当前在线人数:</p>
-            <ICountUp class="index-row1-col2-card-countup"
-                :startVal="startVal"
-                :endVal="endVal"
-                :decimals="decimals"
-                :duration="duration"
-                :options="options"
-                @ready="onReady"
-                />
+        <ICountUp class="index-row1-col2-card-countup"
+        :startVal="startVal"
+        :endVal="endVal"
+        :decimals="decimals"
+        :duration="duration"
+        :options="options"
+        @ready="onReady"
+        />
         </Card>
-        </Col>
-        <Col class="index-row1-col3" span="6">
-        <Card class="index-row1-col3-card" :bordered="false">
-        <p slot="title">当前设备数:</p>
-            <ICountUp class="index-row1-col3-card-countup"
-                :startVal="startVal"
-                :endVal="endVal"
-                :decimals="decimals"
-                :duration="duration"
-                :options="options"
-                @ready="onReady"
-                />
+      </el-col>
+      <el-col :span="6">
+        <Card class="index-row1-col2-card" :bordered="false">
+        <p slot="title">当前在线人数:</p>
+        <ICountUp class="index-row1-col2-card-countup"
+        :startVal="startVal"
+        :endVal="endVal"
+        :decimals="decimals"
+        :duration="duration"
+        :options="options"
+        @ready="onReady"
+        />
         </Card>
-        </Col>
-        <Col class="index-row1-col4" span="6" style="height: 100%;">
-        <Card class="index-row1-col4-card" :bordered="false" style="height: 100%;">
-        <p slot="title">当前服务器数:</p>
-            <ICountUp class="index-row1-col4-card-countup"
-                :startVal="startVal"
-                :endVal="endVal"
-                :decimals="decimals"
-                :duration="duration"
-                :options="options"
-                @ready="onReady"
-                />
+      </el-col>
+      <el-col :span="6">
+        <Card class="index-row1-col2-card" :bordered="false">
+        <p slot="title">当前在线人数:</p>
+        <ICountUp class="index-row1-col2-card-countup"
+        :startVal="startVal"
+        :endVal="endVal"
+        :decimals="decimals"
+        :duration="duration"
+        :options="options"
+        @ready="onReady"
+        />
         </Card>
-        </Col>
-        </Row>
-        <Row class="index-row2" :gutter=16>
-        <Col class="index-row2-col1" span="6">
-        <Card class="index-row2-col1-card" :bordered="false">
-        <Table ref="selection" :columns="columns4" :data="data1"></Table>
-        </Card>
-        </Col>
-        <Col class="index-row2-col2" span="18">
-        <Card class="index-row2-col2-card" :bordered="false">
+      </el-col>
+    </el-row>
+    <el-row>
+      <el-col>
+        <Card :bordered="false">
         <chart></chart>
         </Card>
-        </Col>
-        </Row>
-    </div>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 <script>
 import ICountUp from "vue-countup-v2";
-import chart from "@/views/chart/chart.vue";
+import chart from "@/views/chart.vue";
 export default {
 	components: {
 		ICountUp,
@@ -78,31 +98,6 @@ export default {
 	},
 	data () {
 		return {
-			columns4: [
-				{
-					type: "selection",
-					width: 60,
-					align: "center"
-				},
-				{
-					title: "待办事项",
-					key: "todo"
-				}
-			],
-			data1: [
-				{
-					todo: "John Brown"
-				},
-				{
-					todo: "Jim Green"
-				},
-				{
-					todo: "Joe Black"
-				},
-				{
-					todo: "Jon Snow"
-				}
-			],
 			startVal: 0,
 			endVal: 120500,
 			decimals: 0,
@@ -129,7 +124,7 @@ export default {
 		}
 	},
 	mounted: function () {
-	  console.log("11111");
+
 	}
 };
 </script>

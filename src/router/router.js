@@ -1,33 +1,22 @@
 import VueRouter from "vue-router";
 import Vue from "vue";
 import login from "@/views/login.vue";
-import main from "@/views/layout/main.vue";
-import setting from "@/views/components/setting.vue";
-import manage from "@/views/components/manage.vue";
+import main from "@/views/main.vue";
+import setting from "@/views/setting.vue";
 import index from "@/views/index.vue";
-import infos from "@/views/components/infos.vue";
-import list from "@/views/list/list.vue";
+import list from "@/views/list.vue";
 import global_ from "@/util/global.vue";
-import userCenter from "@/views/components/userCenter.vue";
-import chart from "@/views/chart/chart.vue";
-import dragComponent from "@/views/draggable/dragComponent.vue";
-import treeShow from "@/views/showPage/treeShow.vue";
-import markdown from "@/views/editor/markdown.vue";
-import horizontalScrollList from "@/views/list/horizontalScrollList.vue";
-import editableList from "@/views/list/editableList.vue";
-import exportableList from "@/views/list/exportableList.vue";
-import multiShowList from "@/views/list/multiShowList.vue";
-import locking from "@/views/components/components/locking-page.vue";
-import message from "@/views/message/message.vue";
+import chart from "@/views/chart.vue";
+import dragComponent from "@/views/dragComponent.vue";
+import treeShow from "@/views/treeShow.vue";
+import markdown from "@/views/markdown.vue";
+import horizontalScrollList from "@/views/horizontalScrollList.vue";
+import editableList from "@/views/editableList.vue";
+import exportableList from "@/views/exportableList.vue";
+import multiShowList from "@/views/multiShowList.vue";
 
 Vue.use(VueRouter);
 Vue.use(global_);
-
-const lockingRouter = {
-	path: "/locking",
-	name: "locking",
-	component: locking
-};
 
 const indexRouter = {
 	path: "/",
@@ -54,43 +43,15 @@ const mainRouter = {
 		title: "Main - 首页"
 	},
 	component: main,
-	children: [{
-		path: "infos",
-		name: "infos",
-		component: infos
-	},
+	children: [
 	{
 		path: "setting",
 		name: "setting",
-		component: setting,
-		children: [{
-			path: "manage",
-			name: "manage0",
-			component: manage
-		}]
-	},
-	{
-		path: "manage",
-		name: "manage",
-		component: manage
-	},
-	{
-		path: "userCenter",
-		name: "userCenter",
-		component: userCenter,
-		meta: {
-			title: "用户中心"
-		},
-	},
-	{
-		path: "message",
-		name: "message",
-		component: message
+		component: setting
 	},
 	{
 		path: "components/tree",
 		name: "tree",
-		// component: tree
 		component: treeShow
 	},
 	{
@@ -154,8 +115,7 @@ const mainRouter = {
 const routers = [
 	indexRouter,
 	loginRouter,
-	mainRouter,
-	lockingRouter
+	mainRouter
 ];
 
 const RouterConfig = {

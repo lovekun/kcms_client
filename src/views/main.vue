@@ -6,12 +6,10 @@
 </template>
 
 <script>
-import main0 from "@/views/layout/main0.vue";
-import main1 from "@/views/layout/main1.vue";
+import main0 from "@/views/main0.vue";
 export default {
 	components: {
-		main0,
-		main1
+		main0
 	},
 	data () {
 		let vx = this;
